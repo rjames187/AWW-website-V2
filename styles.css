@@ -42,7 +42,12 @@ nav ul {
     color: #ad9fb8;
     text-decoration: none;
     font-size: 1.2rem;
-    
+}
+
+@media only screen and (max-width: 960px) {
+    #nav-right li a {
+        font-size: 1rem;
+    }
 }
 
 #hero {
