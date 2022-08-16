@@ -2,18 +2,42 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+.hidden {
+    display: none;
+}
+
 body {
     margin: 0px;
+    width: 100vw;
 }
 
 nav {
     background: linear-gradient(90deg, #421a60, #6d2d9e);
     display: flex;
+    flex-direction: column;
+}
+
+nav div:first-child {
+    display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+nav ul {
+    list-style-type: none;
+}
 
+@media only screen and (min-width: 568px) {
+    nav ul {
+        display: none;
+    }
+}
+
+nav ul li a {
+    color: #ad9fb8;
+    text-decoration: none;
+    font-size: 1rem;
+}
 
 #nav-right {
     display: flex;
@@ -21,11 +45,9 @@ nav {
     margin: 1.2rem;
     margin-left: 0px;
     margin-right: 10%;
-}
-
-nav ul {
     list-style: none;
 }
+
 
 #nav-left {
     color: white;
@@ -34,8 +56,27 @@ nav ul {
     margin-left: 5%;
 }
 
+#nav-right img {
+    display: none;
+    height: 2rem;
+    align-self: center;
+    filter: invert(72%) sepia(4%) saturate(1343%) hue-rotate(231deg) brightness(91%) contrast(89%);
+}
+
+@media only screen and (max-width: 568px){
+    #nav-right img {
+        display: inline-block;
+    }
+}
+
 #nav-right li {
     margin: 0rem .5rem 0rem .5rem;
+}
+
+@media only screen and (max-width: 568px) {
+    #nav-right li {
+        display: none;
+    }
 }
 
 #nav-right li a {
@@ -104,6 +145,12 @@ nav ul {
 #home-about img {
     border-radius: 1rem;
     box-shadow: 20px 10px;
+}
+
+@media only screen and (max-width: 425px) {
+    #home-about img {
+        width: 300px;
+    }
 }
 
 #home-about ul {
