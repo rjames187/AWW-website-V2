@@ -173,6 +173,59 @@ nav ul li a {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
+#sponsors {
+    background-image: url('./public/wyatt.jpg');
+    min-height: 600px;
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-color: gray;
+    background-blend-mode: multiply;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#sponsors h2 {
+    font-size: 3rem;
+}
+
+#sponsors>img {
+    border-radius: 1em;
+}
+
+.cat-div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cat-div a{
+    background-color: white;
+    max-height: 50px;
+    max-width: 150px;
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    border-radius: 1em;
+}
+
+.cat-div a img {
+    max-height: 50px;
+    max-width: 150px;
+    border-radius: 1em;
+}
+
+.cat-div>div {
+    background-color: #6d2d9e;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 1em;
+}
+
 
 
 

@@ -1,4 +1,4 @@
-const SPONSOR_DATA = [
+export const SPONSOR_DATA = [
     {
         category: "Reserve Champion ($5,000)",
         items: [
@@ -94,3 +94,4 @@ const SPONSOR_DATA = [
         ],
     }
 ];
+
