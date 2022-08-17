@@ -175,6 +175,7 @@ nav ul li a {
 
 #sponsors {
     background-image: url('./public/wyatt.jpg');
+    background-attachment: fixed;
     min-height: 600px;
     width: 100%;
     overflow: hidden;
@@ -186,6 +187,13 @@ nav ul li a {
     justify-content: center;
     align-items: center;
     color: white;
+    font-size: 2rem;
+}
+
+@media only screen and (max-width: 660px) {
+    #sponsors {
+        background-position: 70% 50%;
+    }
 }
 
 #sponsors h2 {
@@ -193,12 +201,26 @@ nav ul li a {
 }
 
 #sponsors>img {
-    border-radius: 1em;
+    border-radius: 1rem;
+}
+
+#sponsors>a {
+    background-color: #00ac5c;
+    border-radius: 1rem;
+    padding: 5px;
+    margin: 20px;
+}
+
+@media only screen and (max-width: 660px) {
+    #sponsors>h3 {
+        font-size: 1.5rem;
+    }
 }
 
 .cat-div {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .cat-div a{
@@ -208,13 +230,13 @@ nav ul li a {
     display: flex;
     align-items: center;
     margin: 5px;
-    border-radius: 1em;
+    border-radius: 1rem;
 }
 
 .cat-div a img {
     max-height: 50px;
     max-width: 150px;
-    border-radius: 1em;
+    border-radius: 1rem;
 }
 
 .cat-div>div {
@@ -223,7 +245,8 @@ nav ul li a {
     display: flex;
     align-items: center;
     padding: 5px;
-    border-radius: 1em;
+    border-radius: 1rem;
+    font-size: 1rem;
 }
 
 
