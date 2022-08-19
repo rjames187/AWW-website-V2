@@ -24,3 +24,14 @@ NAVBAR_DATA.forEach(i => {
     li.appendChild(newLink);
     hiddenMenu.appendChild(li);
 });
+
+// hamburger menu functionality
+const hamburgerMenu = document.querySelector('#nav-right>img');
+
+hamburgerMenu.addEventListener('click', () => {
+    if ([... hiddenMenu.classList].includes("hidden")) {
+        hiddenMenu.classList.remove("hidden");
+        return;
+    }
+    hiddenMenu.classList.add("hidden");
+});
