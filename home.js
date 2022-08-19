@@ -1,31 +1,13 @@
-import {SPONSOR_DATA} from './image-data.js';
+import { NAVBAR_DATA, SPONSOR_DATA } from './image-data.js';
 
-// nav bar links data
-const nbLinks = [
-    {
-        name: "About",
-        href: "about.html",
-    },
-    {
-        name: "Amy's Wish Club",
-        href: "awc.html",
-    },
-    {
-        name: "Horses",
-        href: "horses.html",
-    },
-    {
-        name: "Support",
-        href: "support.html",
-    },
-];
+
 
 // render home page data
 
 const navRight = document.getElementById('nav-right');
 
 // render navbar
-nbLinks.forEach(i => {
+NAVBAR_DATA.forEach(i => {
     const newLink = document.createElement('a');
     const li = document.createElement('li');
     newLink.textContent = i.name;
@@ -37,7 +19,7 @@ nbLinks.forEach(i => {
 // render hidden part of navbar
 const hiddenMenu = document.querySelector('nav>ul');
 
-nbLinks.forEach(i => {
+NAVBAR_DATA.forEach(i => {
     const newLink = document.createElement('a');
     const li = document.createElement('li');
     newLink.textContent = i.name;

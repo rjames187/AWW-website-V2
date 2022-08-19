@@ -1,3 +1,22 @@
+export const NAVBAR_DATA = [
+    {
+        name: "About",
+        href: "about.html",
+    },
+    {
+        name: "Amy's Wish Club",
+        href: "awc.html",
+    },
+    {
+        name: "Horses",
+        href: "horses.html",
+    },
+    {
+        name: "Support",
+        href: "support.html",
+    },
+];
+
 export const SPONSOR_DATA = [
     {
         category: "Reserve Champion ($5,000)",
