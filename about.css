@@ -5,4 +5,33 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: white;
+}
+
+#about h1 {
+    align-self: flex-start;
+    font-size: 2em;
+}
+
+#about img {
+    color: black;
+    border-radius: 1rem;
+    box-shadow: 20px 10px;
+    max-width: 100%;
+}
+
+#about>div {
+    margin: 20px 100px 100px 100px;
+    max-width: 1000px;
+}
+
+@media only screen and (max-width: 660px) {
+    #about>div {
+        margin: 10px 50px 50px 50px;
+    }
+}
+
+.discrim {
+    color: #ad9fb8;
+    font-style: italic;
 }
