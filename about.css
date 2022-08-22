@@ -35,3 +35,52 @@
     color: #ad9fb8;
     font-style: italic;
 }
+
+#directors {
+    background-image: url('./public/artcamp.jpg');
+    background-attachment: fixed;
+    min-height: 600px;
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-color: gray;
+    background-blend-mode: multiply;
+    color: white;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#directors>div {
+    margin: 20px 100px 100px 100px;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+#directors>div>div {
+    background-color: #6d2d9e;
+    width: 100%;
+    padding: 20px;
+    border-radius: 1rem;
+}
+
+#directors img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+#directors figure {
+    display: flex;
+}
+
+#directors figure figcaption {
+    display: flex;
+    flex-direction: column;
+}

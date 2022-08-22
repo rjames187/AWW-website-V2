@@ -1,4 +1,4 @@
-import { NAVBAR_DATA } from './image-data.js';
+import { NAVBAR_DATA, BOD_DATA } from './image-data.js';
 
 
 const navRight = document.getElementById('nav-right');
@@ -23,6 +23,34 @@ NAVBAR_DATA.forEach(i => {
     newLink.setAttribute("href", i.href);
     li.appendChild(newLink);
     hiddenMenu.appendChild(li);
+});
+
+// render board of directors information
+const directorsSection = document.querySelector('#directors>div');
+
+BOD_DATA.forEach((item) => {
+    const profileBody = document.createElement('div');
+    const profSubBodyCont  = document.createElement('figure');
+
+    const pfp = document.createElement('img');
+    pfp.setAttribute('src', `./public/BOD/${item.file}`) ;
+    profSubBodyCont.appendChild(pfp);
+
+    const figCap = document.createElement('figcaption');
+    const name = document.createElement('p');
+    name.textContent = item.name;
+    figCap.appendChild(name);
+    const title = document.createElement('p');
+    title.textContent = item.title;
+    figCap.appendChild(title);
+    profSubBodyCont.appendChild(figCap);
+    profileBody.appendChild(profSubBodyCont);
+
+    const desc = document.createElement('p');
+    desc.textContent = item.description;
+    profileBody.appendChild(desc);
+
+    directorsSection.appendChild(profileBody);
 });
 
 // hamburger menu functionality
