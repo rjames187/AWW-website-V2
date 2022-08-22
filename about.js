@@ -37,12 +37,29 @@ BOD_DATA.forEach((item) => {
     profSubBodyCont.appendChild(pfp);
 
     const figCap = document.createElement('figcaption');
-    const name = document.createElement('p');
+    const name = document.createElement('h2');
     name.textContent = item.name;
     figCap.appendChild(name);
     const title = document.createElement('p');
     title.textContent = item.title;
     figCap.appendChild(title);
+
+    if (item.email) {
+        const email = document.createElement('a');
+        email.textContent = item.email;
+        email.setAttribute('href', `mailto:${item.email}`);
+        figCap.appendChild(email);
+    }
+
+    if (item.phone) {
+        const phone = document.createElement('a');
+        const phoneString = String(item.phone)
+        phone.textContent = `${phoneString.substring(0, 3)}-${phoneString.substring(3, 6)}-
+            ${phoneString.substring(6, 10)}`;
+        phone.setAttribute('href', `tel:${item.phone}`);
+        figCap.appendChild(phone);
+    }
+
     profSubBodyCont.appendChild(figCap);
     profileBody.appendChild(profSubBodyCont);
 

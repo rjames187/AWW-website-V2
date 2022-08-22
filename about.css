@@ -62,6 +62,12 @@
     align-items: center;
 }
 
+@media only screen and (max-width: 660px) {
+    #directors>div {
+        width: 400px;
+    }
+}
+
 #directors>div>div {
     background-color: #6d2d9e;
     width: 100%;
@@ -78,9 +84,67 @@
 
 #directors figure {
     display: flex;
+    gap: 20px;
 }
 
 #directors figure figcaption {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+}
+
+#directors figure figcaption a {
+    color: #ad9fb8;
+}
+
+#directors figure figcaption h2 {
+    margin: 0px;
+    font-size: 2.5rem;
+}
+
+#directors figure figcaption p {
+    margin: 0px;
+    font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 650px) {
+    #directors img {
+        height: 100px;
+        width: 100px;
+    }
+
+    #directors figure figcaption h2 {
+        font-size: 1.5rem;
+    }
+
+    #directors figure figcaption p {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    #directors>div {
+        width: 300px;
+    }
+
+    #directors img {
+        height: 50px;
+        width: 50px;
+    }
+
+    #directors figure figcaption h2 {
+        font-size: 1.1rem;
+    }
+
+    #directors figure figcaption p {
+        font-size: 1rem;
+    }
+
+    #directors figure figcaption a {
+        font-size: .8rem;
+    }
+
+    #directors>div>div>p {
+        font-size: .8rem;
+    }
 }
