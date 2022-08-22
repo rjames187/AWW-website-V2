@@ -171,14 +171,6 @@ export const BOD_DATA = [
         file: "jaimie.png",
     },
     {
-        name: "Jaimie Ostrom",
-        title: "RN, MSN, CEN, CNL",
-        description: "I have Volunteered 4 years as a side walker for Amy's Wish, routinely spending every Wednesday at the barn, before joining the board. Upon moving to Texas from Chicago, I wanted to learn something new, give back to a community, and embrace the Texas culture. I found Amy's Wish from a Yelp posting and the rest is history! Having experienced working in pediatric hospitals, I have witnessed first hand the impact diagnoses and disease progression make on a family. It has been rewarding and fulfilling to see the positive impact of equine therapy in the lives of our students and their families. Being a part of Amy's Wish is absolutely incredible because one can witness and contribute to students healing, growth, and development to their highest potential regardless of your background. I whole heartedly believe in our mission and hope to assist the board in providing equine therapy to all those in need and can benefit from our program.",
-        email: "Jaimie.amyswish@gmail.com",
-        phone: 8153820227,
-        file: "jaimie.png",
-    },
-    {
         name: "Wende Copp",
         title: "Special Education Teacher & Horse Specialist",
         description: "Wende has been on the Board of Directors of Amy’s Wish since it began in 2011. She has been a long-time friend of Doreen’s for over 30+ years and they would compete together at The Ft. Worth Stock Show Rodeo as Ranch Girls. Wende began riding when she was 5 years old showing POAs, participating in playdays, then barrel racing. She started teaching riding lessons when she was 14 years old. Wende has a Master’s Degree in Special Education and has been teaching for over 30 years. She has taught all grade levels from kindergarten to 12th grade and from Oklahoma, Virginia, Colorado, to Texas. She has also been involved in Special Olympics for Basketball and Track and Field. She is a mom to 3 children and a grandmother of 1. Wende is excited to see the growth of Amy’s Wish and the number of students that have benefitted from the program.",
