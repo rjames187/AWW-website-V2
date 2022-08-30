@@ -39,7 +39,7 @@
     font-size: 1.5em;
 }
 
-#awc img {
+#awc>div>img {
     color: black;
     border-radius: 1rem;
     box-shadow: 20px 10px;
@@ -54,4 +54,42 @@
 
 p.warning {
     color: rgb(113, 15, 75);
+}
+
+#awc>div>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+#awc>div>div>a {
+    background: #421a60;
+    color: white;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-around;
+    width: 25%;
+    height: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#awc>div>div>a>img {
+    max-width: 20%;
+}
+
+@media only screen and (max-width: 840px) {
+    #awc>div>div {
+        flex-direction: column;
+    }
+
+    #awc>div>div>a {
+        width: 80%;
+    }
+
+    
 }
