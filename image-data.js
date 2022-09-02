@@ -231,7 +231,7 @@ export const HORSE_DATA = [
     {
         name: "Gus",
         description: "Gus is 18 years old and is the newest member of the Ride With Pride horse team. He came from Abeline, TX where he was a working ranch horse. Mr. Gus has jumped right in to our program. This handsome fella is so very sweet and loves the kiddos!",
-        file: "gray.jpg",
+        file: "gus.jpg",
     },
     {
         name: "Jessie",
