@@ -182,6 +182,18 @@ export const BOD_DATA = [
 
 export const HORSE_DATA = [
     {
+        name: "Dottie",
+        description: "Dottie is an 11 year old leopard appaloosa pony in training for therapy. We picked her up in Grandview, Texas the week of Thanksgiving in 2020. She was in a barn fire and has a burn down her back and a broken tail. She is a sweetheart and has made an excellent addition to our program!",
+        file: "dottie.jpg",
+        bf: [2021],
+    },
+    {
+        name: "Moon",
+        description: "Moon is a 22 year old welsh pony and came from a cattle ranch in Paradise, Texas. Many children have enjoyed riding him both with us and back at the ranch. He is so patient and kind with our youngest riders.",
+        file: "moon.png",
+        th: [2021],
+    },
+    {
         name: "Strawberry",
         description: "Strawberry is a 18 year old strawberry roan and came from Commerce, Texas. Her father was famous. Look up Peptoboomsmal. He is a $26+ million dollar sire with many awards in cutting, reining cow horse, ranch riding and cowboy events. Strawberry is a master at opening stall doors...but only for her friends!",
         file: "strawberry.jpeg",
@@ -214,11 +226,6 @@ export const HORSE_DATA = [
         file: "Tamon.jpeg",
     },
     {
-        name: "Dottie",
-        description: "Dottie is an 11 year old leopard appaloosa pony in training for therapy. We picked her up in Grandview, Texas the week of Thanksgiving in 2020. She was in a barn fire and has a burn down her back and a broken tail. She is a sweetheart and has made an excellent addition to our program!",
-        file: "dottie.jpg",
-    },
-    {
         name: "Freckles",
         description: "Doreen bought Freckles off of a longhorn ranch in Cross Plains, Texas. The ranch owners children outgrew him but he made an excellent addition to our barn. He's also pretty handy working cows in Paradise. He is a 16 year old Pony of America.",
         file: "freckles.jpg",
@@ -247,11 +254,6 @@ export const HORSE_DATA = [
         name: "Missy",
         description: "Missy is an 12 year old halflinger pony. She is also our resident unicorn! Doreen bought her in Ponder, Texas from a lady who rescues horses from auctions. She is in training to be a therapy horse.",
         file: "missy.jpg",
-    },
-    {
-        name: "Moon",
-        description: "Moon is a 22 year old welsh pony and came from a cattle ranch in Paradise, Texas. Many children have enjoyed riding him both with us and back at the ranch. He is so patient and kind with our youngest riders.",
-        file: "moon.png",
     },
     {
         name: "Patches",
