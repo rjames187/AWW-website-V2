@@ -211,7 +211,7 @@ export const HORSE_DATA = [
     {
         name: "Tamon",
         description: "Tamon is 19 years old and was donated to us this past February. He is an adorable Arabian gelding who EVERYONE loves! He is always willing to please and is a very smooth to ride.",
-        file: "chief.jpg",
+        file: "Tamon.jpeg",
     },
     {
         name: "Dottie",

@@ -7,6 +7,8 @@
     <title>Horses: Amy's Wish with Wings</title>
     <link rel="stylesheet" href="home.css"/>
     <link rel="stylesheet" href="horses.css"/>
+    <script type="module" src="config.js"></script>
+    <script type="module" src="form.js"></script>
     <script type="module" src="navbar.js"></script>
     <script type="module" src="image-data.js"></script>
     <script type="module" src="horses.js" defer></script>
@@ -36,5 +38,35 @@
         </section>
     </main>
 
+
+    <footer>
+        <div>
+            <div id="footer-nav">
+                Navigation
+                <ul>
+                    <!-- Rendered in JS -->
+                </ul>
+            </div>
+            <div id="footer-mail">
+                <span>Mailing Address</span><br/>
+                Amy's Wish With Wings<br/>
+                480 W. Highland St.<br/>
+                Southlake, Tx 76092<br/>
+                817-999-8332
+            </div>
+            <form action="">
+                <span>Contact Us</span>
+                <input id="form-name" type="text" placeholder="Enter your name">
+                <input id="form-email" type="email" placeholder="Enter your email">
+                <textarea id="form-text" name="" id="" row="10" placeholder="Enter your message"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div>
+            <p>Download icon and wings favicon by <a href="https://icons8.com/">Icons8</a></p>
+            <p><a href="https://github.com/rjames187/AWW-website-V2">View Source</a></p>
+            <p>© 2022 Amy's Wish with Wings All Rights Reserved</p>
+        </div>
+    </footer>
 </body>
 </html>

@@ -23,8 +23,8 @@ submitButton.addEventListener('click', (e) => {
     },
     "to": [
         {
-        "email": "rory.james2021@gmail.com",
-        "name": RECEIVE_EMAIL
+        "email": RECEIVE_EMAIL,
+        "name": "Rory James"
         }
     ],
     "subject": "New Contact Form Submission",
