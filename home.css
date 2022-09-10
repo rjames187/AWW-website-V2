@@ -141,6 +141,7 @@ nav ul li a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 50px;
 }
 
 #home-about h2 {
@@ -195,6 +196,7 @@ nav ul li a {
     align-items: center;
     color: white;
     font-size: 2rem;
+    padding-bottom: 50px;
 }
 
 @media only screen and (max-width: 660px) {
@@ -254,6 +256,93 @@ nav ul li a {
     padding: 5px;
     border-radius: 1rem;
     font-size: 1rem;
+}
+
+footer {
+    background: linear-gradient(90deg, #421a60, #6d2d9e);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5% 10% 5% 10%;
+    min-height: 400px;
+}
+
+footer > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 660px) {
+    footer > div {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+#footer-nav {
+    color: white;
+    font-size: 1.2rem;
+}
+
+#footer-nav > ul {
+    list-style-type: none;
+}
+
+#footer-nav > ul > li > a {
+    color: #ad9fb8;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+#footer-mail {
+    color: #ad9fb8;
+    font-size: 1rem;
+}
+
+#footer-mail > span {
+    color: white;
+    font-size: 1.2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: clamp(170px, 250px, 400px)
+}
+
+form > span {
+    color: white;
+    font-size: 1.2rem;
+}
+
+form > input {
+    border-radius: 5px;
+    border: solid;
+}
+
+form > textarea {
+    overflow: auto;
+    min-height: 100px;
+    border-radius: 5px;
+    border: solid;
+}
+
+form > button {
+    max-width: 100px;
+    min-height: 22px;
+    border: solid;
+    border-radius: 5px;
+    background-color: #ad9fb8;
+}
+
+footer > div > p {
+    color: #ad9fb8;
+}
+
+footer > div > p > a {
+    color: #ad9fb8;
 }
 
 

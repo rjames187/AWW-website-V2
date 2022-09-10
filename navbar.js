@@ -25,6 +25,19 @@ export function renderNavBar () {
         hiddenMenu.appendChild(li);
     });
 
+    // render foot navigation
+    const footerNav = document.querySelector('#footer-nav > ul');
+
+    // render navbar
+    NAVBAR_DATA.forEach(i => {
+        const newLink = document.createElement('a');
+        const li = document.createElement('li');
+        newLink.textContent = i.name;
+        newLink.setAttribute("href", i.href);
+        li.appendChild(newLink);
+        footerNav.appendChild(li);
+    });
+
     // hamburger menu functionality
     const hamburgerMenu = document.querySelector('#nav-right>img');
 
