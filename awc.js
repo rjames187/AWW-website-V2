@@ -1,3 +1,3 @@
-import { renderNavBar } from "./navbar";
+import { renderNavBar } from "./navbar.js";
 
 renderNavBar();
