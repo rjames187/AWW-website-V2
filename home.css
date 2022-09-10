@@ -218,6 +218,8 @@ nav ul li a {
     border-radius: 1rem;
     padding: 5px;
     margin: 20px;
+    color: white;
+    text-decoration: none;
 }
 
 @media only screen and (max-width: 660px) {
@@ -335,6 +337,7 @@ form > button {
     border: solid;
     border-radius: 5px;
     background-color: #ad9fb8;
+    cursor: pointer;
 }
 
 footer > div > p {
