@@ -93,3 +93,7 @@ p.warning {
 
     
 }
+
+.curs-not-allowed {
+    cursor: not-allowed;
+}
