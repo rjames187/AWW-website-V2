@@ -9,7 +9,6 @@ submitButton.addEventListener('click', (e) => {
     e.preventDefault();
 
     if (textInput.textContent.trim() === "" || nameInput.textContent.trim() === "" || emailInput.textContent.trim() === "") {
-        console.log("hello")
         return;
     }
 
