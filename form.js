@@ -4,13 +4,10 @@ const textInput = document.getElementById("form-text");
 const nameInput = document.getElementById("form-name");
 const emailInput = document.getElementById("form-email")
 const submitButton = document.querySelector('button[type="submit"]');
+const form = document.querySelector('form')
 
-submitButton.addEventListener('click', (e) => {
+form.addEventListener('submit', (e) => {
     e.preventDefault();
-
-    if (textInput.textContent.trim() === "" || nameInput.textContent.trim() === "" || emailInput.textContent.trim() === "") {
-        return;
-    }
 
     submitButton.textContent = "Sending ...";
 
