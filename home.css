@@ -199,6 +199,12 @@ nav ul li a {
     padding-bottom: 50px;
 }
 
+@supports (-webkit-touch-callout: none) {
+    #sponsors {
+        background-attachment: scroll;
+    }
+}
+
 @media only screen and (max-width: 660px) {
     #sponsors {
         background-position: 70% 50%;
