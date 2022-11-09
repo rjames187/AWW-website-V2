@@ -215,6 +215,16 @@ nav ul li a {
     font-size: 3rem;
 }
 
+img#park-place {
+    max-width: 500px;
+}
+
+@media only screen and (max-width: 660px) {
+    img#park-place {
+        max-width: 80%;
+    }
+}
+
 #sponsors>img {
     border-radius: 1rem;
 }
