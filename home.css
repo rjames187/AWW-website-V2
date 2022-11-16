@@ -197,6 +197,7 @@ nav ul li a {
     color: white;
     font-size: 2rem;
     padding-bottom: 50px;
+    text-align: center;
 }
 
 @supports (-webkit-touch-callout: none) {
@@ -217,6 +218,10 @@ nav ul li a {
 
 img#park-place {
     max-width: 500px;
+}
+
+img#park-place-logo {
+    max-width: 220px;
 }
 
 @media only screen and (max-width: 660px) {
