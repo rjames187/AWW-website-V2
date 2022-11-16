@@ -234,13 +234,17 @@ img#park-place-logo {
     border-radius: 1rem;
 }
 
-#sponsors>a {
+#sponsors>a:last-of-type {
     background-color: #00ac5c;
     border-radius: 1rem;
     padding: 5px;
     margin: 20px;
     color: white;
     text-decoration: none;
+}
+
+#sponsors>a>img {
+    border-radius: 1rem;
 }
 
 @media only screen and (max-width: 660px) {
