@@ -128,9 +128,19 @@ nav ul li a {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
+#hero a.sm-butt-link {
+    font-size: 1rem;
+    margin-top: 25px;
+}
+
 @media only screen and (max-width: 420px) {
     #hero a {
         font-size: 1rem;
+    }
+
+    #hero a.sm-butt-link {
+        font-size: 0.8rem;
+        padding: 0.5rem 1rem 0.5rem 1rem;
     }
 }
 
