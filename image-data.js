@@ -19,13 +19,8 @@ export const NAVBAR_DATA = [
 
 export const SPONSOR_DATA = [
   {
-    category: 'Grand Champion ($10,000+)',
+    category: 'Legacy Donors',
     items: [
-      {
-        name: 'James Landscaping Inc.',
-        file: 'jls.jpg',
-        href: 'https://jameslandscaping.com/'
-      },
       {
         name: 'Cosmetic and Family Dentistry of North Texas',
         file: 'cafdnt.gif',
