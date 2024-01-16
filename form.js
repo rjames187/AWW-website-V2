@@ -1,58 +1,59 @@
-import { API_KEY, SEND_EMAIL, RECEIVE_EMAIL } from "./config.js";
+import { API_KEY, SEND_EMAIL, RECEIVE_EMAIL } from './config.js'
 
-const textInput = document.getElementById("form-text");
-const nameInput = document.getElementById("form-name");
-const emailInput = document.getElementById("form-email")
-const submitButton = document.querySelector('button[type="submit"]');
+const textInput = document.getElementById('form-text')
+const nameInput = document.getElementById('form-name')
+const emailInput = document.getElementById('form-email')
+const submitButton = document.querySelector('button[type="submit"]')
 const form = document.querySelector('form')
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
+form.addEventListener('submit', e => {
+  e.preventDefault()
 
-    submitButton.textContent = "Sending ...";
+  submitButton.textContent = 'Sending ...'
 
-    const emailBody = `Name: ${nameInput.value}<br/>Email: ${emailInput.value}<br/>Message: ${textInput.value}`;
+  const emailBody = `Name: ${nameInput.value}<br/>Email: ${emailInput.value}<br/>Message: ${textInput.value}`
 
-    var myHeaders = new Headers();
-    myHeaders.append("api-key", `${API_KEY}`);
-    myHeaders.append("Content-Type", "application/json");
+  var myHeaders = new Headers()
+  myHeaders.append('api-key', `${API_KEY}`)
+  myHeaders.append('Content-Type', 'application/json')
 
-    var raw = JSON.stringify({
-    "sender": {
-        "name": "Amys Wish with Wings",
-        "email": SEND_EMAIL
+  var raw = JSON.stringify({
+    sender: {
+      name: 'Amys Wish with Wings',
+      email: SEND_EMAIL
     },
-    "to": [
-        {
-        "email": RECEIVE_EMAIL,
-        "name": "Rory James"
-        }
+    to: [
+      {
+        email: RECEIVE_EMAIL,
+        name: 'Rory James'
+      }
     ],
-    "subject": "New Contact Form Submission",
-    "htmlContent": `<html><head></head><body><p>${emailBody}<p></body></html>`,
-    "headers": {
-        "X-Mailin-custom": "custom_header_1:custom_value_1|custom_header_2:custom_value_2|custom_header_3:custom_value_3",
-        "charset": "iso-8859-1"
+    subject: 'New Contact Form Submission',
+    htmlContent: `<html><head></head><body><p>${emailBody}<p></body></html>`,
+    headers: {
+      'X-Mailin-custom':
+        'custom_header_1:custom_value_1|custom_header_2:custom_value_2|custom_header_3:custom_value_3',
+      charset: 'iso-8859-1'
     }
-    });
+  })
 
-    var requestOptions = {
+  var requestOptions = {
     method: 'POST',
     headers: myHeaders,
     body: raw,
     redirect: 'follow'
-    };
+  }
 
-    fetch("https://api.sendinblue.com/v3/smtp/email", requestOptions)
+  fetch('https://api.brevo.com/v3/smtp/email', requestOptions)
     .then(response => response.text())
     .then(result => {
-        console.log(result);
-        submitButton.style.backgroundColor = "green";
-        submitButton.textContent = "Sent✔️";
+      console.log(result)
+      submitButton.style.backgroundColor = 'green'
+      submitButton.textContent = 'Sent✔️'
     })
     .catch(error => {
-        console.log('error', error);
-        submitButton.style.backgroundColor = "red";
-        submitButton.textContent = "Failed❌";
-    });
-});
+      console.log('error', error)
+      submitButton.style.backgroundColor = 'red'
+      submitButton.textContent = 'Failed❌'
+    })
+})
