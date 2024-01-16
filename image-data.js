@@ -188,7 +188,7 @@ export const SPONSOR_DATA = [
     ]
   },
   {
-    category: 'Grant Money Donors',
+    category: 'Grant Donors',
     items: [
       {
         name: 'Kiwanis Club of Fort Worth'
