@@ -186,6 +186,20 @@ export const SPONSOR_DATA = [
         name: 'Dana Rivera'
       }
     ]
+  },
+  {
+    category: 'Grant Money Donors',
+    items: [
+      {
+        name: 'Kiwanis Club of Fort Worth'
+      },
+      {
+        name: "Southlake Women's Club Foundation"
+      },
+      {
+        name: "Angel's Attic"
+      }
+    ]
   }
 ]
 
