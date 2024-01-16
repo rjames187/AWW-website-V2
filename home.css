@@ -265,6 +265,14 @@ img#park-place-logo {
   border-radius: 1rem;
 }
 
+#sponsors > #jls {
+  width: 250px;
+}
+
+#sponsors > #jls > img {
+  width: 100%;
+}
+
 @media only screen and (max-width: 660px) {
   #sponsors > h3 {
     font-size: 1.5rem;
@@ -301,6 +309,19 @@ img#park-place-logo {
   padding: 5px;
   border-radius: 1rem;
   font-size: 1rem;
+}
+
+#cfdnt {
+  width: 300px;
+  height: 100px;
+  max-height: 100px;
+  max-width: 300px;
+}
+
+#cfdnt > img {
+  height: 100px;
+  max-height: 100px;
+  max-width: 300px;
 }
 
 footer {

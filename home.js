@@ -23,6 +23,10 @@ SPONSOR_DATA.forEach(category => {
       img.setAttribute('src', `./public/sponsors/${item.file}`)
       img.setAttribute('alt', item.name)
 
+      if (item.id) {
+        a.setAttribute('id', item.id)
+      }
+
       a.appendChild(img)
       categoryDiv.appendChild(a)
       return

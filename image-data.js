@@ -24,7 +24,8 @@ export const SPONSOR_DATA = [
       {
         name: 'Cosmetic and Family Dentistry of North Texas',
         file: 'cafdnt.gif',
-        href: 'https://dentistincolleyville.com/'
+        href: 'https://dentistincolleyville.com/',
+        id: 'cfdnt'
       }
     ]
   },
