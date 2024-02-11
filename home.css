@@ -146,6 +146,29 @@ nav ul li a {
   }
 }
 
+#bobby-ad {
+  background-color: #6d2d9e;
+  color: white;
+  margin: 25px;
+  padding: 1rem 1rem 1rem 1rem;
+  border-radius: 3rem;
+}
+
+#bobby-ad > h2 {
+  margin-bottom: 10px;
+}
+
+#bobby-ad > p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#bobby-ad > a {
+  box-shadow: none;
+  text-decoration: underline;
+  padding: 0px;
+}
+
 #home-about {
   background: rgb(101, 101, 101);
   background: radial-gradient(
