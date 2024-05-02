@@ -19,24 +19,13 @@ export const NAVBAR_DATA = [
 
 export const SPONSOR_DATA = [
   {
-    category: 'Legacy Donors',
-    items: [
-      {
-        name: 'Cosmetic and Family Dentistry of North Texas',
-        file: 'cafdnt.gif',
-        href: 'https://dentistincolleyville.com/',
-        id: 'cfdnt'
-      }
-    ]
-  },
-  {
-    category: 'Diamond Buckle ($5,000)',
+    category: 'Diamond Buckle',
     items: [
       {
         name: 'Herchman Family Foundation'
       },
       {
-        name: 'The Kwentus Family'
+        name: 'The Crespi Family'
       }
     ]
   },
@@ -47,25 +36,26 @@ export const SPONSOR_DATA = [
         name: 'The Grubbs Family'
       },
       {
+        name: 'Dr. Joan and Dr. Joe Kay'
+      },
+      {
+        name: 'Tracy and Jason Thomas'
+      },
+      {
         name: 'UST Fuel Solutions',
         file: 'ust.png',
         href: 'https://ustfuel.com/'
-      },
-      {
-        name: 'Engel and Volkers',
-        file: 'ev.png',
-        href: 'https://dallasfortworth.evrealestate.com/'
       }
     ]
   },
   {
-    category: 'Silver Buckle ($2,000)',
+    category: 'Silver Buckle',
     items: [
       {
-        name: 'The Straten Family'
+        name: 'The Oehl Family'
       },
       {
-        name: 'EPS Consulting, LLC'
+        name: 'JB and Mary Lou Sandlin Foundation'
       },
       {
         name: 'Precision Eagle Pools and Remodeling',
@@ -73,20 +63,14 @@ export const SPONSOR_DATA = [
         href: 'https://precisioneaglepools.com/'
       },
       {
-        name: 'The Crespi Family'
-      },
-      {
         name: 'Ride with Pride Inc.',
         file: 'rdwp.png',
         href: 'http://www.ridewithprideinc.com/'
-      },
-      {
-        name: 'The Oehl Family'
       }
     ]
   },
   {
-    category: 'Blue Ribbon ($1,000)',
+    category: 'Bronze Buckle',
     items: [
       {
         name: 'Outlaw Equine Hospital Rehab and Center',
@@ -94,110 +78,97 @@ export const SPONSOR_DATA = [
         href: 'https://www.outlawequinevet.com/'
       },
       {
-        name: 'The Princeton Foundation'
+        name: 'The Collins Family'
       },
       {
-        name: 'Dr. Joe and Dr. Joan Kay'
+        name: 'EPS Consulting LLC'
       },
       {
-        name: 'Phillip and Jessica Gandy'
+        name: 'Staci and Sloan Harris'
       },
       {
-        name: 'Ascension Search Partners'
+        name: 'Princeton Foundation'
+      },
+      {
+        name: 'The Straten Family'
+      },
+      {
+        name: 'Complete Care Southlake',
+        file: 'ccs.jpg',
+        href: 'https://www.visitcompletecare.com/er-locations/southlake-er/'
+      },
+      {
+        name: 'Methodist Southlake Medical Center',
+        file: 'msmc.png',
+        href: 'https://www.methodisthealthsystem.org/methodist-southlake-medical-center/'
       }
     ]
   },
   {
-    category: 'Red Ribbon ($500)',
+    category: 'Ruby Buckle',
     items: [
       {
-        name: 'First Financial Bank'
+        name: 'The Krieser Family'
       },
       {
-        name: 'The Hanniflin Family'
-      },
-      {
-        name: 'Jean A. Tuggey DDS & Associates'
-      },
-      {
-        name: 'The Warner Family'
-      },
-      {
-        name: 'The Harris Family'
-      },
-      {
-        name: 'Law Office of Dana L. White, PLLC'
-      },
-      {
-        name: 'Kriesser Family'
-      },
-      {
-        name: 'The Seebeck Family'
-      },
-      {
-        name: 'Pappas & Co CPA'
-      },
-      {
-        name: 'Marsh Eye Center'
-      },
-      {
-        name: 'Kirkwood Eye Center'
-      },
-      {
-        name: 'The John & Hannah Smith Family'
-      },
-      {
-        name: 'NSR Ag Products'
-      },
-      {
-        name: "O'Flawless Concierge Jewelers, LLC"
+        name: 'The Williams Family'
       },
       {
         name: 'The McCaskill Family'
       },
       {
-        name: 'Integrative Pain and Wellness Center'
-      },
-      {
-        name: 'Litaker Realty'
-      },
-      {
-        name: 'Chris Depperman'
-      },
-      {
         name: 'The Bobrowski Family'
       },
       {
-        name: 'Southlake Tennis Center'
+        name: 'The Warner Family'
       },
       {
-        name: 'Rosalba Villareal & Family'
+        name: 'NSR Ag Products LLC'
       },
       {
-        name: 'Pilat & Kourosh Law, LLC'
+        name: 'Pilat and Kourosh Law Pllc',
+        file: 'pkl.png',
+        href: 'https://pilatandkouroshlaw.com/'
       },
       {
-        name: 'Alta Vista Animal Hospital'
+        name: 'Ascension Search Partners',
+        file: 'asp.png',
+        href: 'https://ascensionsearchpartners.com/'
       },
       {
-        name: 'The Shea Family'
+        name: 'First Financial Bank',
+        file: 'ffb.png',
+        href: 'https://ffin.com/'
       },
       {
-        name: 'Dana Rivera'
-      }
-    ]
-  },
-  {
-    category: 'Grant Donors',
-    items: [
-      {
-        name: 'Kiwanis Club of Fort Worth'
+        name: 'D Flawless Concierge Jewelers',
+        file: 'dfcj.png',
+        href: 'https://dflawlessjewelers.com/'
       },
       {
-        name: "Southlake Women's Club Foundation"
+        name: 'Integrative Pain and Wellness Center',
+        file: 'ipwc.png',
+        href: 'https://ipawc.com/'
       },
       {
-        name: "Angel's Attic"
+        name: 'Pappas and Company CPAs P.C.',
+        file: 'pccpa.png',
+        href: 'https://www.thisismycpa.com/'
+      },
+      {
+        name: 'Law Office of Dana L. White, PLLC',
+        file: 'lodw.png',
+        href: 'https://www.danawhitefamilylaw.com/'
+      },
+      {
+        name: 'Litaker Realty',
+        file: 'lr.png',
+        href: 'https://www.litakerrealty.com/'
+      },
+      {
+        name: 'Cosmetic and Family Dentistry of North Texas',
+        file: 'cafdnt.gif',
+        href: 'https://dentistincolleyville.com/'
       }
     ]
   }
