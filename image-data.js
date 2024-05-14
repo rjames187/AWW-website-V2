@@ -221,7 +221,7 @@ export const BOD_DATA = [
   },
   {
     name: 'Grady Bruton',
-    title: 'Animal Sciece Graduate & Instructor',
+    title: 'Animal Science Graduate & Instructor',
     description:
       'I graduated from Tarleton State University with a bachelor’s degree in Animal Science. I am an active member of the Paradise Volunteer Fire Department and a certified EMT. I am a PATH Certified Riding Instructor and teach lessons to special needs children for Amy’s Wish With Wings. I am also a licensed ham radio operator and volunteer my skills to the office of emergency management and national weather service during severe weather events and other disasters that may hinder normal methods of communication. I have been around horses all my life. I have seen the healing effects horses can have on a person, both physically and mentally. My goal in life is to help as many people as I can, whether that’s teaching a therapy lesson or responding to a 911 call. Growing up I competed in 4-H and FFA showing and judging horses and cattle. I also teach at Ride With Pride horsemanship school. I look forward to serving on the board of directors and I am excited to see how we can help connect more people with the healing power of horses.',
     email: 'Kf5qbo@gmail.com',
