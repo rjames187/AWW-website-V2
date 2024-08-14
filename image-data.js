@@ -197,10 +197,10 @@ export const BOD_DATA = [
     name: 'Elizabeth York',
     title: 'Retired RN',
     description:
-      "Elizabeth York is a retired RN living in central Kentucky. She met Doreen while she and her husband were living in Texas between 1984-1988 and has maintained a friendship with her for over 30 years. Elizabeth has owned her current horse (her third) for the last 16 years and currently rides English with emphasis on natural horsemanship and dressage. She has volunteered for Amy's Wish with Wings during several visits to Texas to see Doreen and, through her experience and the stories she has heard about the program, she has developed an interest in seeing the program continue to move forward and grow in providing equine assisted services for children and young adults with diverse needs.",
-    email: 'ewyork@roadrunner.com',
+      'Elizabeth York has been on the Board of Directors for Amy’s Wish With Wings since 2017 and is currently serving in the position of vice-president. She came to Amy’s Wish With Wings having been acquainted with the founder through experience revolving around Ride With Pride, a horsemanship school in Southlake, TX. Since joining the board, Elizabeth has been involved in all areas of board operations, as well as volunteering with clients during lessons and special events. As a retired RN and horse owner, she has unique insight into providing equine assisted services for children and young adults with diverse needs.',
+    email: 'ewyorkmobile@gmail.com',
     phone: 5025989306,
-    file: 'elizabeth.png'
+    file: 'elizabeth.jpg'
   },
   {
     name: 'Dr. Joan Kay',
@@ -245,43 +245,24 @@ export const BOD_DATA = [
     email: 'Wende.copp@me.com',
     phone: 3037181952,
     file: 'wende.png'
+  },
+  {
+    name: 'Terry Purcell',
+    title: 'Retired Professional Services Executive',
+    description:
+      'My family and I have lived in Southlake over thirty years. Born and raised in the DFW area.  Graduated from TCU with a BA and a MBA from the University of Dallas.  I owned and rode horses on the trails around Grapevine Lake. Long-time member of the Hills Church. After retiring I wanted to serve and hopefully add value to a non-profit that blesses the vulnerable.  Fortunately, I learned of Amy’s Wish With Wings and their equine assisted therapy for children to have the opportunity to ride a horse on a trail and in an arena. It’s amazing to see the joy on the children’s faces as they help brush a horse, learn to ride and give a horse a treat. What a blessing for these children to do something that every child wants to do in a little slice of paradise in Southlake. It’s also a pleasure working with the board members in advancing a wonderful program for the children and their families.  Amy’s Wish With Wings has wonderful sponsors, our sincere appreciation goes out to each family, individual, organization and business that provides funding.  Please consider contributing and/or volunteering to support Amy’s Wish With Wings.  You too will be blessed.',
+    email: 'terrypurcell001@yahoo.com',
+    file: 'terry.jpg'
   }
 ]
 
 export const HORSE_DATA = [
-  {
-    name: 'Dottie',
-    description:
-      'Dottie is an 11 year old leopard appaloosa pony in training for therapy. We picked her up in Grandview, Texas the week of Thanksgiving in 2020. She was in a barn fire and has a burn down her back and a broken tail. She is a sweetheart and has made an excellent addition to our program!',
-    file: 'dottie.jpg',
-    bf: [2021]
-  },
-  {
-    name: 'Moon',
-    description:
-      'Moon is a 22 year old welsh pony and came from a cattle ranch in Paradise, Texas. Many children have enjoyed riding him both with us and back at the ranch. He is so patient and kind with our youngest riders.',
-    file: 'moon.png',
-    th: [2021]
-  },
   {
     name: 'Strawberry',
     description:
       'Strawberry is a 18 year old strawberry roan and came from Commerce, Texas. Her father was famous. Look up Peptoboomsmal. He is a $26+ million dollar sire with many awards in cutting, reining cow horse, ranch riding and cowboy events. Strawberry is a master at opening stall doors...but only for her friends!',
     file: 'strawberry.jpeg',
     bf: [2020]
-  },
-  {
-    name: 'Dollar',
-    description:
-      "Dollar is 24 years old and came to us as a retired team roping horse. He won 4 buckles, money and an OTRA (Original Team Roping Association) event as a header. He came to our barn with Gray who was also a header. For those that don't know, a header horse is the first to rope the steer around the horns. Some of our best therapy horses have been retired rope horses and he is a shining star at our barn.",
-    file: 'dollar.jpeg',
-    th: [2020]
-  },
-  {
-    name: 'Apple Jack',
-    description:
-      'Apple Jack is a 15 year old appaloosa pony. He is very eager to please and oh so sweet! He enjoys the kids and of course treats! He is currently in training to become a therapy pony.',
-    file: 'applejack.jpg'
   },
   {
     name: 'Cherokee',
@@ -296,51 +277,15 @@ export const HORSE_DATA = [
     file: 'chief.jpg'
   },
   {
-    name: 'Tamon',
-    description:
-      'Tamon is 19 years old and was donated to us this past February. He is an adorable Arabian gelding who EVERYONE loves! He is always willing to please and is a very smooth to ride.',
-    file: 'Tamon.jpeg'
-  },
-  {
-    name: 'Freckles',
-    description:
-      "Doreen bought Freckles off of a longhorn ranch in Cross Plains, Texas. The ranch owners children outgrew him but he made an excellent addition to our barn. He's also pretty handy working cows in Paradise. He is a 16 year old Pony of America.",
-    file: 'freckles.jpg'
-  },
-  {
-    name: 'Gray',
-    description:
-      'Gray is a handsome 21 year old flea bitten gray Quarter Horse. He came to use with Dollar as a retired roping horse as well. He is so sweet with a wonderful personality!',
-    file: 'gray.jpg'
-  },
-  {
     name: 'Gus',
     description:
       'Gus is 18 years old and is the newest member of the Ride With Pride horse team. He came from Abeline, TX where he was a working ranch horse. Mr. Gus has jumped right in to our program. This handsome fella is so very sweet and loves the kiddos!',
     file: 'gus.jpg'
   },
   {
-    name: 'Jessie',
-    description:
-      'Jessie is 21 years old and came to us from Sky Ranch where she was in their trail program. She has become a favorite for our instructors and loves her job!',
-    file: 'jessie.jpg'
-  },
-  {
-    name: 'Lucy',
-    description:
-      'Lucy is a 21 year old sweetheart! She came from Huntsville, Texas where she was a prison horse. She either worked on the cattle ranch or was a mounted patrol in the prison yard. Next time you are at the barn take a look at her brands. These are the brands of the Huntsville prison system.',
-    file: 'lucy.png'
-  },
-  {
     name: 'Missy',
     description:
       'Missy is an 12 year old halflinger pony. She is also our resident unicorn! Doreen bought her in Ponder, Texas from a lady who rescues horses from auctions. She is in training to be a therapy horse.',
     file: 'missy.jpg'
-  },
-  {
-    name: 'Patches',
-    description:
-      'Patches is a 15 year old overo buckskin American Paint Horse. He came from New Mexico where he was used for hunting in the mountains. He is super friendly and loves everyone he meets!',
-    file: 'patches.jpg'
   }
 ]
