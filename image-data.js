@@ -230,10 +230,10 @@ export const BOD_DATA = [
   },
   {
     name: 'Jaimie Ostrom',
-    title: 'RN, MSN, CEN, CNL',
+    title: 'Registered Nurse',
     description:
-      "I have Volunteered 4 years as a side walker for Amy's Wish, routinely spending every Wednesday at the barn, before joining the board. Upon moving to Texas from Chicago, I wanted to learn something new, give back to a community, and embrace the Texas culture. I found Amy's Wish from a Yelp posting and the rest is history! Having experienced working in pediatric hospitals, I have witnessed first hand the impact diagnoses and disease progression make on a family. It has been rewarding and fulfilling to see the positive impact of equine therapy in the lives of our students and their families. Being a part of Amy's Wish is absolutely incredible because one can witness and contribute to students healing, growth, and development to their highest potential regardless of your background. I whole heartedly believe in our mission and hope to assist the board in providing equine therapy to all those in need and can benefit from our program.",
-    email: 'Jaimie.amyswish@gmail.com',
+      'Upon moving to Texas from Chicago, I wanted to learn something new, give back to the community, and embrace the Texas culture. I found Amy’s Wish with Wings from a Yelp posting and now ten years later Texas has become home. I had been a regular volunteer for years prior to being asked to be part of the board. My experience as a side walker was rewarding and inspirational due to the healing effect of horses. I was able to witness and contribute to riders overcoming various challenges and build strength. With a background in healthcare, nothing quite compares to the therapeutic milieu of being at the barn and working with horses. Amy’s Wish has had a lasting impact on my life, both personally and professionally. I am grateful for the opportunity to continue serving and supporting the mission!',
+    email: 'Jaimielouise@gmail.com',
     phone: 8153820227,
     file: 'jaimie.png'
   },
