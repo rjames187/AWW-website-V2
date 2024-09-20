@@ -287,5 +287,40 @@ export const HORSE_DATA = [
     description:
       'Missy is an 12 year old halflinger pony. She is also our resident unicorn! Doreen bought her in Ponder, Texas from a lady who rescues horses from auctions. She is in training to be a therapy horse.',
     file: 'missy.jpg'
+  },
+  {
+    name: 'Chip',
+    description: '',
+    file: 'Chip.JPEG'
+  },
+  {
+    name: 'Hank',
+    description: '',
+    file: 'hank.jpg'
+  },
+  {
+    name: 'Jazzy',
+    description: '',
+    file: 'jazzy.jpeg'
+  },
+  {
+    name: 'Max',
+    description: '',
+    file: 'Max.PNG'
+  },
+  {
+    name: 'Nick',
+    description: '',
+    file: 'Nick.JPEG'
+  },
+  {
+    name: 'Pinto',
+    description: '',
+    file: 'pinto.jpg'
+  },
+  {
+    name: 'Rooster',
+    description: '',
+    file: 'rooster.jpg'
   }
 ]
