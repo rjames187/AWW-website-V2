@@ -290,22 +290,26 @@ export const HORSE_DATA = [
   },
   {
     name: 'Chip',
-    description: '',
+    description:
+      'Chip is a 14 year old black and white paint. He was donated to us in March of 2022. In his previous home he was a trail/pleasure horse. His silly and sweet disposition has been a wonderful addition to our barn.',
     file: 'Chip.JPEG'
   },
   {
     name: 'Hank',
-    description: '',
+    description:
+      'Hank is a 12 year old Belgian draft/quarter horse cross. He was donated to us in October of 2022. In his previous home he was a pleasure/trail horse with some mounted patrol training. This big guy is as sweet as they come. ',
     file: 'hank.jpg'
   },
   {
     name: 'Jazzy',
-    description: '',
+    description:
+      "Jazzy is an 18-year-old brown mare. Jazzy's previous job was calf roping. She loves people and loves her job.",
     file: 'jazzy.jpeg'
   },
   {
     name: 'Max',
-    description: '',
+    description:
+      'Max is an 18 year old quarter horse. He is the tallest horse at our barn and is the sweetest boy! In his younger years hw was a western pleasure horse.',
     file: 'Max.PNG'
   },
   {
@@ -315,12 +319,14 @@ export const HORSE_DATA = [
   },
   {
     name: 'Pinto',
-    description: '',
+    description:
+      'Pinto is a 15 year old "pinto" paint pony. He is owned by one of our students and came from a working ranch. His sweet and fun personality is a hit with the kids!',
     file: 'pinto.jpg'
   },
   {
     name: 'Rooster',
-    description: '',
+    description:
+      'Rooster is an 18 year old Quarter Horse and is the newest member of the Ride With Pride family! He was a reining horse in his younger years and is enjoying his retirement teaching kids.',
     file: 'rooster.jpg'
   }
 ]
