@@ -253,6 +253,12 @@ export const BOD_DATA = [
       'My family and I have lived in Southlake over thirty years. Born and raised in the DFW area.  Graduated from TCU with a BA and a MBA from the University of Dallas.  I owned and rode horses on the trails around Grapevine Lake. Long-time member of the Hills Church. After retiring I wanted to serve and hopefully add value to a non-profit that blesses the vulnerable.  Fortunately, I learned of Amy’s Wish With Wings and their equine assisted therapy for children to have the opportunity to ride a horse on a trail and in an arena. It’s amazing to see the joy on the children’s faces as they help brush a horse, learn to ride and give a horse a treat. What a blessing for these children to do something that every child wants to do in a little slice of paradise in Southlake. It’s also a pleasure working with the board members in advancing a wonderful program for the children and their families.  Amy’s Wish With Wings has wonderful sponsors, our sincere appreciation goes out to each family, individual, organization and business that provides funding.  Please consider contributing and/or volunteering to support Amy’s Wish With Wings.  You too will be blessed.',
     email: 'terrypurcell001@yahoo.com',
     file: 'terry.jpg'
+  },
+  {
+    name: 'Addie Pilat',
+    email: 'addiepilat@gmail.com',
+    phone: 8176882933,
+    file: 'addie.jpg'
   }
 ]
 
