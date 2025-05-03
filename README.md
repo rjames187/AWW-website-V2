@@ -18,4 +18,10 @@ Additionally, a front-end framework would allow the abstraction of duplicated co
 I have chosen React as the front-end framework because I have experience with it and it has a very large talent pool.
 
 I propose migrating away from Netlify and towards Cloudflare for hosting. Cloudflare has a generous free tier which, unlike Netlify, includes DDoS protection.
-Furthermore, building a WYSIWYG editor will likely require persistent server-side storage and the Cloudflare Developer Platform has storage solutions which can easily integrate with a Cloudflare-hosted website. 
+Furthermore, building a WYSIWYG editor will likely require persistent server-side storage and the Cloudflare Developer Platform has storage solutions which can easily integrate with a Cloudflare-hosted website.
+
+#### Phases
+
+1. Port the old website to React
+2. Repair the contact form and program it to send submissions to the chief stakeholder. Include error handling and report any errors via email to the web master.
+3. Implement the WYSIWYG Editor
