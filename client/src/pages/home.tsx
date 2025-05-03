@@ -1,4 +1,7 @@
+import { DataService } from '../dataService';
 import './home.css';
+
+const sponsors = DataService.getSponsors();
 
 function Home() {
     return (
@@ -52,7 +55,31 @@ function Home() {
                 alt="Grand Champion Sponsor, James Landscaping Inc., donated $10,000 dollars"
             /></a>
             <a href="support.html#sponsor">Become a Sponsor</a>
-            {/* dynamically render */}
+            {
+                sponsors.map((category) => {
+                    return  (
+                        <>
+                            <h3 key={category.category}>
+                                {category.category} 
+                            </h3>
+                            <div className='cat-div'>
+                                {
+                                    category.items.map((sponsor) => {
+                                        if (sponsor.file) {
+                                            return (
+                                                <a key={sponsor.name} href={sponsor.href}>
+                                                    <img src={`./sponsors/${sponsor.file}`} alt={sponsor.name} />
+                                                </a>
+                                            );
+                                        }
+                                        return (<div>{sponsor.name}</div>);
+                                    })
+                                }
+                            </div>
+                        </>
+                    )
+                })
+            }
         </section>
       </main>
     )
