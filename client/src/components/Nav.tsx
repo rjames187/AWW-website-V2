@@ -17,7 +17,7 @@ function Nav({ pages }: NavProps) {
         <div>
             <Link to="/" id="nav-left"> Amy's Wish with Wings </Link>
             <ul id="nav-right">
-              <img src="../../public/menu-icon.svg" alt="menu" onClick={() => setHamburgerMenuVisible(!hamburgerMenuVisible)} />
+              <img src="./menu-icon.svg" alt="menu" onClick={() => setHamburgerMenuVisible(!hamburgerMenuVisible)} />
               {
                 renderPageList(pages)
               }
