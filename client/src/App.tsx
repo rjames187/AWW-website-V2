@@ -5,13 +5,14 @@ import Home from './pages/home';
 
 export type Page = {
   name: string;
+  href: string;
 }
 
 const PAGES: Page[] = [
-  { name: 'About' },
-  { name: "Amy's Wish Club"},
-  { name: 'Horses' },
-  { name: 'Support' }
+  { name: 'About', href: '/about' },
+  { name: "Amy's Wish Club", href: '/awc'},
+  { name: 'Horses', href: '/horses' },
+  { name: 'Support', href: '/support' },
 ];
 
 function App() {

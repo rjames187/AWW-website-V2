@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Page } from '../App';
 import './Nav.css'
 import { renderPageList } from './utils';
+import { Link } from 'react-router-dom';
 
 interface NavProps {
   pages: Page[];
@@ -14,7 +15,7 @@ function Nav({ pages }: NavProps) {
     return (
       <nav>
         <div>
-            <a href="home.html" id="nav-left"> Amy's Wish with Wings </a>
+            <Link to="/" id="nav-left"> Amy's Wish with Wings </Link>
             <ul id="nav-right">
               <img src="../../public/menu-icon.svg" alt="menu" onClick={() => setHamburgerMenuVisible(!hamburgerMenuVisible)} />
               {
