@@ -1,5 +1,7 @@
+import { Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer'
 import Nav from './components/Nav'
+import Home from './pages/home';
 
 export type Page = {
   name: string;
@@ -17,6 +19,9 @@ function App() {
   return (
     <>
       <Nav pages={PAGES} />
+      <Routes>
+        <Route path="/" element={<Home/>} />
+      </Routes>
       <Footer pages={PAGES} />
     </>
   )
