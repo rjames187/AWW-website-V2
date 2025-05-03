@@ -49,7 +49,7 @@ function Footer() {
           </p>
           <p>© 2024 Amy's Wish with Wings All Rights Reserved</p>
         </div>
-      </footer>
+        </footer>
     )
 }
 
