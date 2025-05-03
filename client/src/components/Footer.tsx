@@ -1,12 +1,21 @@
+import { Page } from '../App';
 import './Footer.css'
+import { renderPageList } from './utils';
 
-function Footer() {
+interface FooterProps {
+  pages: Page[];
+}
+
+function Footer({ pages }: FooterProps) {
     return (
         <footer>
         <div>
           <div id="footer-nav">
             Navigation
             <ul>
+              {
+                renderPageList(pages)
+              }
             </ul>
           </div>
           <div id="footer-mail">
