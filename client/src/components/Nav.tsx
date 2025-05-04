@@ -10,29 +10,29 @@ interface NavProps {
 
 function Nav({ pages }: NavProps) {
 
-    const [hamburgerMenuVisible, setHamburgerMenuVisible] = useState<boolean>(false);
+  const [hamburgerMenuVisible, setHamburgerMenuVisible] = useState<boolean>(false);
 
-    return (
-      <nav>
-        <div>
-            <Link to="/" id="nav-left"> Amy's Wish with Wings </Link>
-            <ul id="nav-right">
-              <img src="./menu-icon.svg" alt="menu" onClick={() => setHamburgerMenuVisible(!hamburgerMenuVisible)} />
-              {
-                renderPageList(pages)
-              }
-            </ul>
-        </div>
-        {
-          hamburgerMenuVisible &&
+  return (
+    <nav>
+      <div>
+        <Link to="/" id="nav-left"> Amy's Wish with Wings </Link>
+        <ul id="nav-right">
+          <img src="./menu-icon.svg" alt="menu" onClick={() => setHamburgerMenuVisible(!hamburgerMenuVisible)} />
+          {
+            renderPageList(pages)
+          }
+        </ul>
+      </div>
+      {
+        hamburgerMenuVisible &&
           <ul>
             {
               renderPageList(pages)
             }
           </ul>
-        }
-      </nav>
-    )
+      }
+    </nav>
+  )
 }
 
 export default Nav;
