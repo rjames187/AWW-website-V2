@@ -1,4 +1,4 @@
-import { DataService } from '../dataService';
+import { DataService } from '../DataService';
 import './home.css';
 
 const sponsors = DataService.getSponsors();

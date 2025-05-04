@@ -1,0 +1,150 @@
+#about {
+    background: rgb(101,101,101);
+    background: radial-gradient(circle, rgba(101,101,101,1) 0%, rgba(48,48,48,1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#about h1 {
+    align-self: flex-start;
+    font-size: 2em;
+}
+
+#about img {
+    color: black;
+    border-radius: 1rem;
+    box-shadow: 20px 10px;
+    max-width: 100%;
+}
+
+#about>div {
+    margin: 20px 100px 100px 100px;
+    max-width: 1000px;
+}
+
+@media only screen and (max-width: 660px) {
+    #about>div {
+        margin: 10px 50px 50px 50px;
+    }
+}
+
+.discrim {
+    color: #ad9fb8;
+    font-style: italic;
+}
+
+#directors {
+    background-image: url('./artcamp.jpg');
+    background-attachment: fixed;
+    min-height: 600px;
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-color: gray;
+    background-blend-mode: multiply;
+    color: white;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#directors>div {
+    margin: 20px 100px 100px 100px;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 660px) {
+    #directors>div {
+        width: 400px;
+    }
+}
+
+#directors>div>div {
+    background-color: #6d2d9e;
+    width: 100%;
+    padding: 20px;
+    border-radius: 1rem;
+}
+
+#directors img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+#directors figure {
+    display: flex;
+    gap: 20px;
+}
+
+#directors figure figcaption {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#directors figure figcaption a {
+    color: #ad9fb8;
+}
+
+#directors figure figcaption h2 {
+    margin: 0px;
+    font-size: 2.5rem;
+}
+
+#directors figure figcaption p {
+    margin: 0px;
+    font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 650px) {
+    #directors img {
+        height: 100px;
+        width: 100px;
+    }
+
+    #directors figure figcaption h2 {
+        font-size: 1.5rem;
+    }
+
+    #directors figure figcaption p {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    #directors>div {
+        width: 300px;
+    }
+
+    #directors img {
+        height: 50px;
+        width: 50px;
+    }
+
+    #directors figure figcaption h2 {
+        font-size: 1.1rem;
+    }
+
+    #directors figure figcaption p {
+        font-size: 1rem;
+    }
+
+    #directors figure figcaption a {
+        font-size: .8rem;
+    }
+
+    #directors>div>div>p {
+        font-size: .8rem;
+    }
+}

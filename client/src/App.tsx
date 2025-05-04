@@ -1,7 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer'
 import Nav from './components/Nav'
-import Home from './pages/home';
+import Home from './pages/Home';
+import About from './pages/About';
 
 export type Page = {
   name: string;
@@ -22,6 +23,7 @@ function App() {
       <Nav pages={PAGES} />
       <Routes>
         <Route path="/" element={<Home/>} />
+        <Route path="/about" element={<About/>} />
       </Routes>
       <Footer pages={PAGES} />
     </>
