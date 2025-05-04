@@ -22,6 +22,6 @@ Furthermore, building a WYSIWYG editor will likely require persistent server-sid
 
 #### Roadmap
 
-1. Port the old website to React
+1. Port the old website to React ✅
 2. Repair the contact form and program it to send submissions to the chief stakeholder. Include error handling and report any errors via email to the web master.
 3. Implement the WYSIWYG Editor
