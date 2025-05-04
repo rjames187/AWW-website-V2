@@ -1,1 +1,1 @@
-eslint . --fix
+cd client && npx eslint . --fix
