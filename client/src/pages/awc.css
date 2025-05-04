@@ -1,0 +1,99 @@
+.warning-banner {
+    background-color: red;
+    color: white;
+    margin: 0px;
+    font-size: 1.5em;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#awc {
+    background: rgb(101,101,101);
+    background: radial-gradient(circle, rgba(101,101,101,1) 0%, rgba(48,48,48,1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#awc>div {
+    margin: 20px 100px 100px 100px;
+    max-width: 1000px;
+}
+
+@media only screen and (max-width: 660px) {
+    #awc>div {
+        margin: 10px 50px 50px 50px;
+    }
+}
+
+#awc h1 {
+    align-self: flex-start;
+    font-size: 2em;
+}
+
+#awc h2 {
+    align-self: flex-start;
+    font-size: 1.5em;
+}
+
+#awc>div>img {
+    color: black;
+    border-radius: 1rem;
+    box-shadow: 20px 10px;
+    max-width: 500px;
+}
+
+@media only screen and (max-width: 620px) {
+    #awc img {
+        width: 100%;
+    }
+}
+
+p.warning {
+    color: rgb(113, 15, 75);
+}
+
+#awc>div>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+#awc>div>div>a {
+    background: #421a60;
+    color: white;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-around;
+    width: 25%;
+    height: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#awc>div>div>a>img {
+    max-width: 20%;
+}
+
+@media only screen and (max-width: 840px) {
+    #awc>div>div {
+        flex-direction: column;
+    }
+
+    #awc>div>div>a {
+        width: 80%;
+    }
+
+    
+}
+
+.curs-not-allowed {
+    cursor: not-allowed;
+}
