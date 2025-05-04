@@ -1,0 +1,120 @@
+#horses {
+    background-image: url('./public/artcamp.jpg');
+    background-attachment: fixed;
+    min-height: 600px;
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-color: gray;
+    background-blend-mode: multiply;
+    color: white;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#horses>div {
+    margin: 20px 100px 100px 100px;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+#horses h1 {
+    align-self: flex-start;
+    font-size: 3rem;
+    margin-bottom: 0px;
+}
+
+#horses a {
+    background-color: #00ac5c;
+    align-self: flex-start;
+    border-radius: 4rem;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 1rem 2rem 1rem 2rem;
+    color: lightgray;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#horses>div>div {
+    background-color: #6d2d9e;
+    width: 100%;
+    padding: 20px;
+    border-radius: 1rem;
+}
+
+#horses img {
+    border-radius: 10%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+#horses figure {
+    display: flex;
+    gap: 20px;
+}
+
+#horses figure figcaption {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#horses figure figcaption h2 {
+    margin: 0px;
+    font-size: 2.5rem;
+}
+
+#horses figure figcaption p {
+    margin: 0px;
+    font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 650px) {
+    #horses img {
+        height: 100px;
+        width: 100px;
+    }
+
+    #horses figure figcaption h2 {
+        font-size: 1.5rem;
+    }
+
+    #horses figure figcaption p {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    #horses>div {
+        width: 300px;
+    }
+
+    #horses img {
+        height: 50px;
+        width: 75px;
+        border-radius: 1rem;
+    }
+
+    #horses figure figcaption h2 {
+        font-size: 1.1rem;
+    }
+
+    #horses figure figcaption p {
+        font-size: 1rem;
+    }
+
+    #horses figure figcaption a {
+        font-size: .8rem;
+    }
+
+    #horses>div>div>p {
+        font-size: .8rem;
+    }
+}

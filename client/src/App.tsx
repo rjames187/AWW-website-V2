@@ -4,6 +4,7 @@ import Nav from './components/Nav'
 import Home from './pages/Home';
 import About from './pages/About';
 import AmysWishClub from './pages/AmysWishClub';
+import Horses from './pages/Horses';
 
 export type Page = {
   name: string;
@@ -26,6 +27,7 @@ function App() {
         <Route path="/" element={<Home/>} />
         <Route path="/about" element={<About/>} />
         <Route path="/awc" element={<AmysWishClub/>} />
+        <Route path="/horses" element={<Horses/>} />
       </Routes>
       <Footer pages={PAGES} />
     </>
