@@ -1,0 +1,132 @@
+#donate {
+    background-image: url('../assets/bethegood.jpg');
+    min-height: 600px;
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-color: gray;
+    background-blend-mode: multiply;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#donate > h1 {
+    color: white;
+    text-align: center;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
+    font-size: 4rem;
+}
+
+#donate > div > a {
+    background-color: #6d2d9e;
+    border-radius: 4rem;
+    font-size: 2rem;
+    text-decoration: none;
+    padding: 1rem 2rem 1rem 2rem;
+    margin: .5rem;
+    color: lightgray;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+@media only screen and (max-width: 420px) {
+    #donate > div > a {
+        font-size: 1rem;
+    }
+}
+
+#sponsor {
+    background: rgb(101,101,101);
+    background: radial-gradient(circle, rgba(101,101,101,1) 0%, rgba(48,48,48,1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#sponsor h1 {
+    align-self: flex-start;
+    font-size: 2em;
+}
+
+#sponsor >div > img {
+    color: black;
+    border-radius: 1rem;
+    box-shadow: 20px 10px;
+    max-width: min(250px, 100%)
+}
+
+#sponsor>div {
+    margin: 20px 100px 100px 100px;
+    max-width: 1000px;
+}
+
+@media only screen and (max-width: 660px) {
+    #sponsor>div {
+        margin: 10px 50px 50px 50px;
+    }
+}
+
+#sponsor > div > a {
+    background: #421a60;
+    color: white;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-around;
+    width: min(300px, 70%);
+    height: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#volunteer {
+    background-image: url('../assets/staff.jpg');
+    min-height: 600px;
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-color: gray;
+    background-blend-mode: multiply;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+#volunteer > h1 {
+    color: white;
+    text-align: center;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
+    font-size: 4rem;
+}
+
+#volunteer > p {
+    color: white;
+    font-size: 2rem;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
+}
+
+#volunteer > a {
+    background: #421a60;
+    color: white;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-around;
+    width: min(300px, 70%);
+    height: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+}

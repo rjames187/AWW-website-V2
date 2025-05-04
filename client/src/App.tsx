@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import AmysWishClub from './pages/AmysWishClub';
 import Horses from './pages/Horses';
+import Support from './pages/Support';
 
 export type Page = {
   name: string;
@@ -28,6 +29,7 @@ function App() {
         <Route path="/about" element={<About/>} />
         <Route path="/awc" element={<AmysWishClub/>} />
         <Route path="/horses" element={<Horses/>} />
+        <Route path="/support" element={<Support/>} />
       </Routes>
       <Footer pages={PAGES} />
     </>
