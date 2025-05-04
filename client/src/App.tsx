@@ -20,7 +20,7 @@ function App() {
 
   return (
     <>
-      <Nav pages={PAGES} />
+        <Nav pages={PAGES} />
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/about" element={<About/>} />
