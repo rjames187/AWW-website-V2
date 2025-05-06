@@ -37,7 +37,7 @@
 }
 
 #directors {
-    background-image: url('./artcamp.jpg');
+    background-image: url('../assets/artcamp.jpg');
     background-attachment: fixed;
     min-height: 600px;
     width: 100%;
