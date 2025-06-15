@@ -1,13 +1,17 @@
-import { renderHtml } from "./renderHtml";
+import Emailer from "./Emailer";
 
 export default {
   async fetch(request, env) {
-    const stmt = env.DB.prepare("SELECT * FROM comments LIMIT 3");
-    const { results } = await stmt.all();
+    const brevoKey = env.BREVO_KEY;
+    const fromEmail = env.FROM_EMAIL;
+    const fromName = env.FROM_NAME;
 
-    return new Response(renderHtml(JSON.stringify(results, null, 2)), {
+    const emailer = new Emailer(brevoKey, fromEmail, fromName);
+    const result = await emailer.sendEmail("rory.james2021@gmail.com", "Rory James");
+
+    return new Response(JSON.stringify(result), {
       headers: {
-        "content-type": "text/html",
+        "content-type": "application/json", 
       },
     });
   },
