@@ -7,11 +7,17 @@ export default {
     const fromName = env.FROM_NAME;
 
     const emailer = new Emailer(brevoKey, fromEmail, fromName);
-    const result = await emailer.sendEmail("rory.james2021@gmail.com", "Rory James");
+    let result = "";
+    try {
+      result = await emailer.sendEmail("rory.james2021@gmail.com", "Rory James");
+    } catch (error: any) {
+      console.error("Error sending email:", error);
+      return new Response(`Error sending email: ${error?.message}`);
+    }
 
-    return new Response(JSON.stringify(result), {
+    return new Response(result, {
       headers: {
-        "content-type": "application/json", 
+        "content-type": "text/plain", 
       },
     });
   },

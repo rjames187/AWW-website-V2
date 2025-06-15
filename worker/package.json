@@ -29,8 +29,5 @@
     "dev": "wrangler dev",
     "predeploy": "wrangler d1 migrations apply DB --remote",
     "seedLocalD1": "wrangler d1 migrations apply DB --local"
-  },
-  "dependencies": {
-    "@getbrevo/brevo": "^2.2.0"
   }
 }

@@ -1,33 +1,48 @@
-import * as brevo from '@getbrevo/brevo';
-
 export default class Emailer {
-  private client: brevo.TransactionalEmailsApi;
   private fromAddress: string;
   private fromName: string;
+  private headers: any;
+  private URL: string = "https://api.brevo.com/v3/smtp/email";
 
   constructor(apiKey: string, fromAddress: string, fromName: string) {
-    const client = new brevo.TransactionalEmailsApi();
-    client.setApiKey(brevo.TransactionalEmailsApiApiKeys.apiKey, apiKey);
-    this.client = client;
+    this.headers = new Headers();
+    this.headers.append('api-key', `${apiKey}`);
+    this.headers.append('Content-Type', 'application/json');
     this.fromAddress = fromAddress;
     this.fromName = fromName;
   }
 
   public async sendEmail(toAddress: string, toName: string) {
-    const email = new brevo.SendSmtpEmail();
-    email.subject = "Test Email";
-    email.htmlContent = this.getEmailContent();
-    email.sender = { email: this.fromAddress, name: this.fromName };
-    email.to = [{ email: toAddress, name: toName }];
-    email.replyTo = { email: toAddress, name: toName }; 
-
-    try {
-      const data = await this.client.sendTransacEmail(email);
-      return data;
-    } catch (error) {
-      console.error("Error sending email:", error);
-      return error;
+    const options = {
+      method: 'POST',
+      headers: this.headers,
+      body: this.getBody(toAddress, toName),
     }
+
+    const response = await fetch(this.URL, options);
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`Failed to send email: ${response.status} ${errorText}`);
+    }
+    return await response.text();
+  }
+
+  private getBody(toAddress: string, toName: string) {
+    const body = {
+      sender: {
+        name: this.fromName,
+        email: this.fromAddress,
+      },
+      to: [
+        {
+          name: toName,
+          email: toAddress,
+        },
+      ],
+      subject: "Test Email",
+      htmlContent: this.getEmailContent(),
+    };
+    return JSON.stringify(body);
   }
 
   private getEmailContent(): string {
