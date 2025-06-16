@@ -1,4 +1,4 @@
-export default class Emailer {
+export default class EmailService {
   private fromAddress: string;
   private fromName: string;
   private headers: any;
@@ -19,12 +19,7 @@ export default class Emailer {
       body: this.getBody(toAddress, toName),
     }
 
-    const response = await fetch(this.URL, options);
-    if (!response.ok) {
-      const errorText = await response.text();
-      throw new Error(`Failed to send email: ${response.status} ${errorText}`);
-    }
-    return await response.text();
+    return await fetch(this.URL, options);
   }
 
   private getBody(toAddress: string, toName: string) {

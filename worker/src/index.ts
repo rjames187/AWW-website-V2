@@ -1,24 +1,38 @@
-import Emailer from "./Emailer";
+import { Router } from "itty-router";
+import { CORS_HEADERS, ctxFactory, errorResponse, jsonResponse } from "./utils";
+import { emailController } from "./email-controller";
+
+const router = Router();
+
+router.get('/', () => {
+  return jsonResponse(
+    { message: "AWWW Service is running ..." },
+    200
+  );
+})
+
+router.get('/email', emailController);
+
+router.options("*", () => {
+  return new Response(null, {
+    headers: CORS_HEADERS,
+    status: 204
+  });
+});
+
+router.all("*", () => {
+  return errorResponse("Not Found", 404);
+});
 
 export default {
   async fetch(request, env) {
-    const brevoKey = env.BREVO_KEY;
-    const fromEmail = env.FROM_EMAIL;
-    const fromName = env.FROM_NAME;
+    const ctx = ctxFactory(env);
 
-    const emailer = new Emailer(brevoKey, fromEmail, fromName);
-    let result = "";
     try {
-      result = await emailer.sendEmail("rory.james2021@gmail.com", "Rory James");
+      return await router.fetch(request, ctx);
     } catch (error: any) {
-      console.error("Error sending email:", error);
-      return new Response(`Error sending email: ${error?.message}`);
+      console.error("Internal Server Error:", error);
+      return errorResponse(`Internal Server Error: ${error?.message}`, 500);
     }
-
-    return new Response(result, {
-      headers: {
-        "content-type": "text/plain", 
-      },
-    });
   },
 } satisfies ExportedHandler<Env>;

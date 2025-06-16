@@ -29,5 +29,8 @@
     "dev": "wrangler dev",
     "predeploy": "wrangler d1 migrations apply DB --remote",
     "seedLocalD1": "wrangler d1 migrations apply DB --local"
+  },
+  "dependencies": {
+    "itty-router": "^5.0.18"
   }
 }
