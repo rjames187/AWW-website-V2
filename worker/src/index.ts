@@ -32,7 +32,8 @@ export default {
       env.FROM_EMAIL,
       env.FROM_NAME,
       env.ADMIN_EMAIL,
-      env.OWNER_EMAIL
+      env.OWNER_EMAIL,
+      env.DUAL_NOTIFICATIONS
     );
 
     try {

@@ -8,14 +8,15 @@ export default class EmailService {
   private ownerAddress: string;
   private headers: any;
   private URL: string = "https://api.brevo.com/v3/smtp/email";
+  private notifyBoth: boolean;
 
-  public static startService(apiKey: string, fromAddress: string, fromName: string, adminAddress: string, ownerAddress: string) {
+  public static startService(apiKey: string, fromAddress: string, fromName: string, adminAddress: string, ownerAddress: string, notifyBoth: string) {
     if (EmailService.instance === undefined) {
-      EmailService.instance = new EmailService(apiKey, fromAddress, fromName, adminAddress, ownerAddress);
+      EmailService.instance = new EmailService(apiKey, fromAddress, fromName, adminAddress, ownerAddress, notifyBoth);
     }  
   }
 
-  constructor(apiKey: string, fromAddress: string, fromName: string, adminAddress: string, ownerAddress: string) {
+  constructor(apiKey: string, fromAddress: string, fromName: string, adminAddress: string, ownerAddress: string, notifyBoth: string) {
     this.headers = new Headers();
     this.headers.append('api-key', `${apiKey}`);
     this.headers.append('Content-Type', 'application/json');
@@ -23,6 +24,12 @@ export default class EmailService {
     this.fromName = fromName;
     this.adminAddress = adminAddress;
     this.ownerAddress = ownerAddress;
+
+    if (notifyBoth === "false") {
+      this.notifyBoth = false;
+    } else {
+      this.notifyBoth = true;
+    }
   }
 
   public async sendContactEmail(fillerAddress: string, fillerName: string, message: string) {
@@ -30,7 +37,9 @@ export default class EmailService {
       throw new Error("EmailService is not initialized. Call EmailService.startService() first.");
     }
 
-    for (const toAddress of [this.adminAddress, this.ownerAddress]) {
+    const toAddresses = this.notifyBoth ? [this.adminAddress, this.ownerAddress] : [this.adminAddress];
+
+    for (const toAddress of toAddresses) {
       const body = this.getContactBody(toAddress, fillerAddress, fillerName, message);
       const response = await this.sendEmail(body);
       if (!response.ok) {
