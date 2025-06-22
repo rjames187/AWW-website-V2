@@ -19,6 +19,7 @@
     "publish": true
   },
   "devDependencies": {
+    "@types/node": "^24.0.3",
     "typescript": "5.8.3",
     "wrangler": "^4.20.0"
   },

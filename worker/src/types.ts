@@ -1,5 +1,6 @@
-import EmailService from "./EmailService";
-
-export interface Context {
-  emailService: EmailService;
+export interface EmailRequest {
+  email: string;
+  firstName: string;
+  lastName: string;
+  message: string;
 }

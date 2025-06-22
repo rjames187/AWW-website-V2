@@ -1,6 +1,7 @@
 import { Router } from "itty-router";
-import { CORS_HEADERS, ctxFactory, errorResponse, jsonResponse } from "./utils";
+import { CORS_HEADERS, errorResponse, jsonResponse } from "./utils";
 import { emailController } from "./email-controller";
+import EmailService from "./EmailService";
 
 const router = Router();
 
@@ -11,7 +12,7 @@ router.get('/', () => {
   );
 })
 
-router.get('/email', emailController);
+router.post('/email', emailController);
 
 router.options("*", () => {
   return new Response(null, {
@@ -26,10 +27,16 @@ router.all("*", () => {
 
 export default {
   async fetch(request, env) {
-    const ctx = ctxFactory(env);
+    EmailService.startService(
+      env.BREVO_KEY,
+      env.FROM_EMAIL,
+      env.FROM_NAME,
+      env.ADMIN_EMAIL,
+      env.OWNER_EMAIL
+    );
 
     try {
-      return await router.fetch(request, ctx);
+      return await router.fetch(request);
     } catch (error: any) {
       console.error("Internal Server Error:", error);
       return errorResponse(`Internal Server Error: ${error?.message}`, 500);
