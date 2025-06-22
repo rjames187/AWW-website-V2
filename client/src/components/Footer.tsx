@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Page } from '../App';
 import './Footer.css'
 import { renderPageList } from './utils';
-import 'dotenv/config';
 
 interface FooterProps {
   pages: Page[];
@@ -24,7 +23,7 @@ function Footer({ pages }: FooterProps) {
     setMessage(e.target.value);
   }
 
-  const handleSubmit = async (e: React.FormEvent<HTMLButtonElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const body = {
@@ -33,7 +32,7 @@ function Footer({ pages }: FooterProps) {
       message
     }
 
-    const workersHost = process.env.REACT_APP_WORKERS_HOST || 'localhost:8787';
+    const workersHost = import.meta.env.VITE_WORKER_HOST || 'localhost:8787';
 
     const response = await fetch(`${workersHost}/contact`, {
       method: 'POST',
@@ -74,7 +73,7 @@ function Footer({ pages }: FooterProps) {
             Southlake, Tx 76092<br />
             817-999-8332
         </div>
-        <form action="">
+        <form action="" onSubmit={handleSubmit}>
           <span>Contact Us</span>
           <input
             id="form-name"
@@ -97,7 +96,7 @@ function Footer({ pages }: FooterProps) {
             required
             onChange={handleMessageChange}
           ></textarea>
-          <button type="submit" onSubmit={handleSubmit}>Submit</button>
+          <button type="submit">Submit</button>
         </form>
       </div>
       <div>
