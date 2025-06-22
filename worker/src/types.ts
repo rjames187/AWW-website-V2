@@ -1,6 +1,5 @@
 export interface EmailRequest {
   email: string;
-  firstName: string;
-  lastName: string;
+  name: string;
   message: string;
 }

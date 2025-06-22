@@ -1,12 +1,61 @@
+import { useState } from 'react';
 import { Page } from '../App';
 import './Footer.css'
 import { renderPageList } from './utils';
+import 'dotenv/config';
 
 interface FooterProps {
   pages: Page[];
 }
 
 function Footer({ pages }: FooterProps) {
+
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  }
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
+  } 
+  const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setMessage(e.target.value);
+  }
+
+  const handleSubmit = async (e: React.FormEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
+    const body = {
+      email,
+      name,
+      message
+    }
+
+    const workersHost = process.env.REACT_APP_WORKERS_HOST || 'localhost:8787';
+
+    const response = await fetch(`${workersHost}/contact`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error('Error sending email:', errorData);
+      alert('There was an error sending your message. Please try again later.');
+      return;
+    }
+
+    alert('Your message has been sent successfully!');
+    setEmail('');
+    setName('');
+    setMessage('');
+  }
+
   return (
     <footer>
       <div>
@@ -32,20 +81,23 @@ function Footer({ pages }: FooterProps) {
             type="text"
             placeholder="Enter your name"
             required
+            onChange={handleNameChange}
           />
           <input
             id="form-email"
             type="email"
             placeholder="Enter your email"
             required
+            onChange={handleEmailChange}
           />
           <textarea
             id="form-text"
             name=""
             placeholder="Enter your message"
             required
+            onChange={handleMessageChange}
           ></textarea>
-          <button type="submit">Submit</button>
+          <button type="submit" onSubmit={handleSubmit}>Submit</button>
         </form>
       </div>
       <div>

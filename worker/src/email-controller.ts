@@ -4,14 +4,13 @@ import { errorResponse, jsonResponse } from "./utils";
 
 export async function emailController(request: Request): Promise<Response> {
   const body: EmailRequest = await request.json();
-  if (!body.email || !body.firstName || !body.lastName || !body.message) {
-    return errorResponse("Missing required fields: email, firstName, lastName, message", 400);
+  if (!body.email || !body.name || !body.message) {
+    return errorResponse("Missing required fields: email, name, message", 400);
   }
-  const fullName = `${body.firstName} ${body.lastName}`;
 
   const response = await EmailService.instance.sendContactEmail(
     body.email,
-    fullName,
+    body.name,
     body.message
   );
   
