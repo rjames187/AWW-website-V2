@@ -12,7 +12,7 @@ router.get('/', () => {
   );
 })
 
-router.post('/email', emailController);
+router.post('/contact', emailController);
 
 router.options("*", () => {
   return new Response(null, {
