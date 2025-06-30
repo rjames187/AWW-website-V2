@@ -15,5 +15,11 @@
       "binding": "IMG_BUCKET",
       "bucket_name": "aww-images"
     }
-  ]
+  ],
+	"kv_namespaces": [
+		{
+			"binding": "KV",
+			"id": "b67fbdf7a16144b582f05de578490f56"
+		}
+	]
 }

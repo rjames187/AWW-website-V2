@@ -4,6 +4,8 @@ import { emailController } from "./email-controller";
 import EmailService from "./EmailService";
 import ImageService from "./ImageService";
 import { imageController } from "./image-controller";
+import { dataController } from "./data-controller";
+import DataService from "./DataService";
 
 const router = Router();
 
@@ -25,6 +27,8 @@ router.options("*", () => {
   });
 });
 
+router.all('/data', dataController);
+
 router.all("*", () => {
   return errorResponse("Not Found", 404);
 });
@@ -41,6 +45,8 @@ export default {
     );
 
     ImageService.startService(env.IMG_BUCKET);
+
+    DataService.startService(env.KV);
 
     try {
       return await router.fetch(request);

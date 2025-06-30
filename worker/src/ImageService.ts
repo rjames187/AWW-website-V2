@@ -1,5 +1,6 @@
 export default class ImageService {
   public static instance: ImageService;
+  private bucket: R2Bucket;
 
   public static startService(bucket: R2Bucket) {
     if (ImageService.instance === undefined) {
@@ -7,7 +8,7 @@ export default class ImageService {
     }
   }
 
-  constructor(private bucket: R2Bucket) {
+  constructor(bucket: R2Bucket) {
     this.bucket = bucket;
   }
 
