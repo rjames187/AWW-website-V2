@@ -9,5 +9,11 @@
 	"upload_source_maps": true,
 	"observability": {
 		"enabled": true
-	}
+	},
+	"r2_buckets": [
+    {
+      "binding": "IMG_BUCKET",
+      "bucket_name": "aww-images"
+    }
+  ]
 }

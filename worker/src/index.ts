@@ -2,6 +2,8 @@ import { Router } from "itty-router";
 import { CORS_HEADERS, errorResponse, jsonResponse } from "./utils";
 import { emailController } from "./email-controller";
 import EmailService from "./EmailService";
+import ImageService from "./ImageService";
+import { imageController } from "./image-controller";
 
 const router = Router();
 
@@ -13,6 +15,8 @@ router.get('/', () => {
 })
 
 router.post('/contact', emailController);
+
+router.put('/upload-image', imageController);
 
 router.options("*", () => {
   return new Response(null, {
@@ -35,6 +39,8 @@ export default {
       env.OWNER_EMAIL,
       env.DUAL_NOTIFICATIONS
     );
+
+    ImageService.startService(env.IMG_BUCKET);
 
     try {
       return await router.fetch(request);
