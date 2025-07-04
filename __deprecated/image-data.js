@@ -19,136 +19,131 @@ export const NAVBAR_DATA = [
 
 export const SPONSOR_DATA = [
   {
-    category: 'Diamond Buckle',
+    category: 'Supreme Champion ($15,000)',
     items: [
       {
-        name: 'Herchman Family Foundation'
-      },
-      {
-        name: 'The Crespi Family'
+        name: 'James Landscaping Inc.',
+        file: 'jls.jpg',
+        href: 'https://jameslandscaping.com/'
       }
     ]
   },
   {
-    category: 'Gold Buckle ($3,000)',
+    category: 'Grand Champion ($10,000)',
     items: [
       {
-        name: 'The Grubbs Family'
-      },
+        name: 'The Kwentus Family'
+      }
+    ]
+  },
+  {
+    category: 'Reserve Champion ($8,000)',
+    items: [
       {
-        name: 'Dr. Joan and Dr. Joe Kay'
-      },
+        name: 'Paul and Donna Herchman'
+      }
+    ]
+  },
+  {
+    category: 'Award of Excellence ($5,000)',
+    items: [
       {
-        name: 'Tracy and Jason Thomas'
+        name: 'Jason & Tracy Thomas'
       },
       {
         name: 'UST Fuel Solutions',
         file: 'ust.png',
         href: 'https://ustfuel.com/'
+      },
+      {
+        name: 'Mr. and Mrs. Grubbs'
+      },
+      {
+        name: 'The Crespi Family'
+      },
+      {
+        name: 'The Daniel and Julianna Garrison Foundation'
       }
     ]
   },
   {
-    category: 'Silver Buckle',
+    category: 'Blue Ribbon ($2,500)',
     items: [
       {
-        name: 'The Oehl Family'
-      },
-      {
-        name: 'JB and Mary Lou Sandlin Foundation'
-      },
-      {
-        name: 'Precision Eagle Pools and Remodeling',
-        file: 'preceagle.png',
-        href: 'https://precisioneaglepools.com/'
-      },
-      {
-        name: 'Ride with Pride Inc.',
-        file: 'rdwp.png',
-        href: 'http://www.ridewithprideinc.com/'
+        name: 'Scholars and Athletes Serving Others',
+        file: 'saso.png',
+        href: 'https://www.sasonow.com/'
       }
     ]
   },
   {
-    category: 'Bronze Buckle',
+    category: 'Red Ribbon ($1,000)',
     items: [
       {
-        name: 'Outlaw Equine Hospital Rehab and Center',
-        file: 'ole.png',
-        href: 'https://www.outlawequinevet.com/'
+        name: 'Pat & Mika Ryan'
+      },
+      {
+        name: 'EPS Consulting'
+      },
+      {
+        name: 'Megan Whitlock'
       },
       {
         name: 'The Collins Family'
       },
       {
-        name: 'EPS Consulting LLC'
+        name: 'The Harris Family'
       },
       {
-        name: 'Staci and Sloan Harris'
+        name: 'The Oehl Family'
       },
       {
-        name: 'Princeton Foundation'
+        name: 'NSR Ag Products'
       },
       {
-        name: 'The Straten Family'
+        name: 'Outlaw Equine Hospital Rehab and Center',
+        file: 'ole.png',
+        href: 'https://www.outlawequinevet.com/'
       },
-      {
-        name: 'Complete Care Southlake',
-        file: 'ccs.jpg',
-        href: 'https://www.visitcompletecare.com/er-locations/southlake-er/'
-      },
-      {
-        name: 'Methodist Southlake Medical Center',
-        file: 'msmc.png',
-        href: 'https://www.methodisthealthsystem.org/methodist-southlake-medical-center/'
-      }
     ]
   },
   {
-    category: 'Ruby Buckle',
+    category: 'Yellow Ribbon ($500)',
     items: [
       {
-        name: 'The Krieser Family'
+        name: 'Rodent Retreat',
+        file: 'rr.png',
+        href: 'https://www.rodentretreattexas.com/'
       },
       {
-        name: 'The Williams Family'
-      },
-      {
-        name: 'The McCaskill Family'
+        name: 'The Matos Family'
       },
       {
         name: 'The Bobrowski Family'
       },
       {
-        name: 'The Warner Family'
+        name: 'The Williams Family'
       },
       {
-        name: 'NSR Ag Products LLC'
+        name: 'Robert and Linda Warner'
       },
       {
-        name: 'Pilat and Kourosh Law Pllc',
-        file: 'pkl.png',
-        href: 'https://pilatandkouroshlaw.com/'
+        name: 'Ryan Jacobson'
       },
       {
-        name: 'Ascension Search Partners',
-        file: 'asp.png',
-        href: 'https://ascensionsearchpartners.com/'
+        name: 'Jason & Lisa Krieser'
       },
       {
-        name: 'First Financial Bank',
-        file: 'ffb.png',
-        href: 'https://ffin.com/'
+        name: 'The Stephens Family'
       },
       {
-        name: 'D Flawless Concierge Jewelers',
-        file: 'dfcj.png',
-        href: 'https://dflawlessjewelers.com/'
+        name: 'Atoosa Kourosh'
       },
       {
-        name: 'Integrative Pain and Wellness Center',
-        file: 'ipwc.png',
-        href: 'https://ipawc.com/'
+        name: 'Abiding Strategy'
+      },
+      {
+        name: 'The McCaskill Family'
       },
       {
         name: 'Pappas and Company CPAs P.C.',
@@ -156,19 +151,47 @@ export const SPONSOR_DATA = [
         href: 'https://www.thisismycpa.com/'
       },
       {
-        name: 'Law Office of Dana L. White, PLLC',
-        file: 'lodw.png',
-        href: 'https://www.danawhitefamilylaw.com/'
+        name: 'The Straten Family'
       },
       {
-        name: 'Litaker Realty',
-        file: 'lr.png',
-        href: 'https://www.litakerrealty.com/'
+        name: 'Pilat and Kourosh Law Pllc',
+        file: 'pkl.png',
+        href: 'https://pilatandkouroshlaw.com/'
       },
       {
-        name: 'Cosmetic and Family Dentistry of North Texas',
-        file: 'cafdnt.gif',
-        href: 'https://dentistincolleyville.com/'
+        name: 'ReCoat Revolution',
+        file: 'recoat.png',
+        href: 'https://recoatrevolution.com/'
+      }
+    ]
+  },
+  {
+    category: 'Donations ($250)',
+    items: [
+      {
+        name: 'Tom Wunderlick'
+      },
+      {
+        name: 'Integrative Pain and Wellness Center',
+        file: 'ipwc.png',
+        href: 'https://ipawc.com/'
+      },
+      {
+        name: 'Charlotte Colby'
+      },
+      {
+        name: 'Robert Morrow'
+      },
+      {
+        name: 'Bobby & Lisa Rawls'
+      },
+      {
+        name: 'Johnathan Rice & Co',
+        file: 'jrac.png',
+        href: 'https://jonathanriceillustration.com/'
+      },
+      {
+        name: 'Tim & Raechel Gleason'
       }
     ]
   }

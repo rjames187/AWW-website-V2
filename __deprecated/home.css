@@ -275,7 +275,7 @@ img#park-place-logo {
   border-radius: 1rem;
 }
 
-#sponsors > a:nth-of-type(2) {
+#sponsors > a:nth-of-type(1) {
   background-color: #00ac5c;
   border-radius: 1rem;
   padding: 5px;
