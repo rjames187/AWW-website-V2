@@ -15,19 +15,6 @@ function Home() {
           <a href="./support.html#volunteer">Volunteer</a>
           <a href="./support.html">Donate</a>
         </div>
-        <div id="bobby-ad">
-          <h2>Register for 🎵 Bobbyfest!</h2>
-          <p>
-                Great music, food trucks, and a silent auction <br />
-                benefitting Amy's Wish with Wings
-          </p>
-          <a href="https://www.bobbyfest.com">www.bobbyfest.com</a>
-          <p>
-                Saturday April 5th 2025 <br />
-                The Marq Outdoor Amphitheater <br />
-                285 Shady Oaks Drive Southlake, Texas
-          </p>
-        </div>
       </section>
       <section id="home-about">
         <h2>About Us</h2>

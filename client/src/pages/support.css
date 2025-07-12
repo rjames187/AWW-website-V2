@@ -57,7 +57,8 @@
     color: black;
     border-radius: 1rem;
     box-shadow: 20px 10px;
-    max-width: min(250px, 100%)
+    max-width: min(250px, 100%);
+    margin-bottom: 20px;
 }
 
 #sponsor>div {

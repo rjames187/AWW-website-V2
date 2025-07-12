@@ -8,7 +8,7 @@
     background-blend-mode: multiply;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
   }
   
@@ -84,7 +84,8 @@
     );
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 20px;
     align-items: center;
     padding-bottom: 50px;
   }

@@ -44,6 +44,7 @@
     border-radius: 1rem;
     box-shadow: 20px 10px;
     max-width: 500px;
+    margin-bottom: 20px;
 }
 
 @media only screen and (max-width: 620px) {
