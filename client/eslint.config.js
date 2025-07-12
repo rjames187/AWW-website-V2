@@ -23,7 +23,8 @@ export default tseslint.config(
         'warn',
         { allowConstantExport: true },
       ],
-      indent: ['error', 2]
+      indent: ['error', 2],
+      '@typescript-eslint/no-explicit-any': "off"
     },
   },
 )

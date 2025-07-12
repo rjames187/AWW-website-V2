@@ -27,6 +27,7 @@ router.options("*", () => {
   });
 });
 
+// controller supports both GET and POST
 router.all('/data', dataController);
 
 router.all("*", () => {
