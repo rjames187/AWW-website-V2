@@ -1,11 +1,12 @@
 {
   "name": "d1-template",
-  "description": "Cloudflare's native serverless SQL database.",
+  "description": "Worker for AWWW website",
   "cloudflare": {
-    "label": "Worker + D1 Database",
+    "label": "Worker + R2 + KV",
     "products": [
       "Workers",
-      "D1"
+      "R2",
+      "KV"
     ],
     "categories": [
       "storage"

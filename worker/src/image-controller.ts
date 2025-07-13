@@ -15,7 +15,16 @@ export async function imageController(request: Request): Promise<Response> {
     return errorResponse("No image provided", 400);
   }
 
-  ImageService.instance.uploadImage(key, image);
-
-  return jsonResponse({ message: "Image uploaded successfully" }, 201);
+  try {
+    const result = await ImageService.instance.uploadImage(key, image);
+    
+    if (result.success) {
+      return jsonResponse({ message: result.message }, 201);
+    } else {
+      return errorResponse(result.message, 500);
+    }
+  } catch (error) {
+    console.error('Upload controller error:', error);
+    return errorResponse("Internal server error during upload", 500);
+  }
 }
