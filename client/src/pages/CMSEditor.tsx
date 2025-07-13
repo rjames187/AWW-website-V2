@@ -1,102 +1,35 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ContentObject, ContentSchema } from "../components/cms/types";
 import ContentObjectEditor from "../components/cms/ContentObjectEditor";
 import ContentList from "../components/cms/ContentList";
 import { directorSchema, horseSchema, sponsorSchema } from "../data/schemas";
+import { fetchData } from "../services/dataService";
 
-const sampleData: Record<string, ContentObject[]> = {
-  'Horses': [
-    { 
-      id: '1', 
-      name: 'Thunder', 
-      description: 'Beautiful stallion', 
-      file: { 
-        name: 'thunder.jpg', 
-        size: 2048000, 
-        type: 'image/jpeg', 
-        dataUrl: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzdhNTdjMiIvPjx0ZXh0IHg9IjUwIiB5PSI1NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+VGh1bmRlcjwvdGV4dD48L3N2Zz4=' 
-      }, 
-      bf: [2022, 2023] 
-    },
-    { 
-      id: '2', 
-      name: 'Lightning', 
-      file: { 
-        name: 'lightning.jpg', 
-        size: 1500000, 
-        type: 'image/jpeg', 
-        dataUrl: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzllNjNmZiIvPjx0ZXh0IHg9IjUwIiB5PSI1NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+TGlnaHRuaW5nPC90ZXh0Pjwvc3ZnPg==' 
-      } 
-    }
-  ],
-  'Directors': [
-    { 
-      id: '1', 
-      name: 'John Doe', 
-      title: 'CEO', 
-      email: 'john@example.com', 
-      phone: '5551234567', 
-      file: { 
-        name: 'john.jpg', 
-        size: 1800000, 
-        type: 'image/jpeg', 
-        dataUrl: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzRhMTQ4YyIvPjx0ZXh0IHg9IjUwIiB5PSI1NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Sm9obiBEb2U8L3RleHQ+PC9zdmc+' 
-      } 
-    },
-    { 
-      id: '2', 
-      name: 'Jane Smith', 
-      title: 'CTO', 
-      email: 'jane@example.com', 
-      file: { 
-        name: 'jane.jpg', 
-        size: 1600000, 
-        type: 'image/jpeg', 
-        dataUrl: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzZhMWI5YSIvPjx0ZXh0IHg9IjUwIiB5PSI1NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+SmFuZSBTbWl0aDwvdGV4dD48L3N2Zz4=' 
-      } 
-    }
-  ],
-  'Sponsors': [
-    { 
-      id: '1', 
-      category: 'Gold', 
-      items: [
-        { 
-          name: 'ABC Corp', 
-          file: { 
-            name: 'abc.jpg', 
-            size: 1200000, 
-            type: 'image/jpeg', 
-            dataUrl: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2ZmZDcwMCIvPjx0ZXh0IHg9IjUwIiB5PSI1NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSJibGFjayIgdGV4dC1hbmNob3I9Im1pZGRsZSI+QUJDIE9vcnA8L3RleHQ+PC9zdmc+' 
-          }, 
-          href: 'https://abc.com' 
-        },
-        { name: 'XYZ Ltd', href: 'https://xyz.com' }
-      ]
-    },
-    { 
-      id: '2', 
-      category: 'Silver', 
-      items: [
-        { 
-          name: 'DEF Inc', 
-          file: { 
-            name: 'def.jpg', 
-            size: 900000, 
-            type: 'image/jpeg', 
-            dataUrl: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2M5YzljOSIvPjx0ZXh0IHg9IjUwIiB5PSI1NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSJibGFjayIgdGV4dC1hbmNob3I9Im1pZGRsZSI+REVGIEluYzwvdGV4dD48L3N2Zz4=' 
-          } 
-        }
-      ]
-    }
-  ]
+const placeholder: Record<string, ContentObject[]> = {
+  'Horses': [],
+  'Directors': [],
+  'Sponsors': []
 };
 
 const CMSEditor: React.FC = () => {
   const [currentSchema, setCurrentSchema] = useState<ContentSchema>(horseSchema);
-  const [data, setData] = useState<Record<string, ContentObject[]>>(sampleData);
+  const [data, setData] = useState<Record<string, ContentObject[]>>(placeholder);
   const [editingObject, setEditingObject] = useState<ContentObject | null>(null);
   const [isCreating, setIsCreating] = useState(false);
+
+  useEffect(() => {
+    (async () => {
+      const horses = await fetchData('horses');
+      const directors = await fetchData('directors');
+      const sponsors = await fetchData('sponsors');
+      
+      setData({
+        'Horses': horses.data || [],
+        'Directors': directors.data || [],
+        'Sponsors': sponsors.data || []
+      });
+    })();
+  }, []);
 
   const schemas = [horseSchema, directorSchema, sponsorSchema];
 
