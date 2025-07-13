@@ -1,6 +1,7 @@
 import { Plus } from "lucide-react";
 import React, { useState } from "react";
 import { FieldDefinition } from "./types";
+import { uploadImageFile } from "../../services/uploadService";
 
 const FieldInput: React.FC<{
   field: FieldDefinition;
@@ -8,6 +9,7 @@ const FieldInput: React.FC<{
   onChange: (value: any) => void;
 }> = ({ field, value, onChange }) => {
   const [dragOver, setDragOver] = useState(false);
+  const [uploading, setUploading] = useState(false);
   const fileInputRef = React.useRef<HTMLInputElement>(null);
 
   const baseInputStyle = {
@@ -26,18 +28,49 @@ const FieldInput: React.FC<{
     boxShadow: '0 0 0 2px rgba(126, 87, 194, 0.2)'
   };
 
-  const handleFileSelect = (file: File) => {
+  const handleFileSelect = async (file: File) => {
     const reader = new FileReader();
-    reader.onload = (e) => {
+    reader.onload = async (e) => {
       const result = e.target?.result;
       if (result) {
-        onChange({
+        const fileData = {
           file: file,
           name: file.name,
           size: file.size,
           type: file.type,
           dataUrl: result as string
-        });
+        };
+        
+        // Update the UI immediately with preview
+        onChange(fileData);
+        
+        // Upload the file to backend
+        setUploading(true);
+        try {
+          // Generate a unique key for the file
+          const key = `${Date.now()}-${file.name}`;
+          
+          // Upload using the File object (more efficient)
+          const uploadResult = await uploadImageFile(file, key);
+          
+          if (uploadResult.success) {
+            // Update the value with the server URL
+            onChange({
+              ...fileData,
+              uploadedUrl: uploadResult.url,
+              uploadKey: key
+            });
+            console.log('File uploaded successfully:', uploadResult.url);
+          } else {
+            console.error('Upload failed:', uploadResult.message);
+            // You might want to show an error message to the user here
+          }
+        } catch (error) {
+          console.error('Upload error:', error);
+          // You might want to show an error message to the user here
+        } finally {
+          setUploading(false);
+        }
       }
     };
     reader.readAsDataURL(file);
@@ -115,6 +148,8 @@ const FieldInput: React.FC<{
               />
               <div style={{ fontSize: '12px', color: '#666', marginBottom: '8px' }}>
                 {value.name} ({Math.round(value.size / 1024)} KB)
+                {uploading && <span style={{ color: '#7e57c2', marginLeft: '8px' }}>Uploading...</span>}
+                {value.uploadedUrl && <span style={{ color: '#4caf50', marginLeft: '8px' }}>✓ Uploaded</span>}
               </div>
               <button
                 onClick={(e) => {
