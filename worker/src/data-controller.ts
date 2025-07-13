@@ -14,7 +14,7 @@ export async function dataController(request: Request): Promise<Response> {
     return errorResponse("Missing 'key' query parameter", 400);
   }
 
-  const ALLOWED_KEYS = ["sponsors", "horses", "members"];
+  const ALLOWED_KEYS = ["sponsors", "horses", "directors"];
 
   if (!ALLOWED_KEYS.includes(key)) {
     return errorResponse(`Invalid key: ${key}`, 400);
