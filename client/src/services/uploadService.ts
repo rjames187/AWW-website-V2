@@ -42,11 +42,16 @@ export async function uploadImageFile(file: File, key: string): Promise<UploadRe
     }
 
     const result = await response.json();
+
+    const CDN_BASE_URL = import.meta.env.CDN_HOST;
+    if (!CDN_BASE_URL) {
+      throw new Error('CDN host is not configured');
+    }
     
     return {
       success: true,
       message: result.message || 'Image uploaded successfully',
-      url: `${API_BASE_URL}/images/${key}` // Adjust this based on your image serving endpoint
+      url: `${CDN_BASE_URL}/${key}`
     };
     
   } catch (error) {
