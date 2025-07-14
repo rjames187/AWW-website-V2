@@ -1,9 +1,18 @@
+import { authenticate } from "./auth/middleware";
 import DataService from "./DataService";
 import { errorResponse, jsonResponse } from "./utils";
 
 export async function dataController(request: Request): Promise<Response> {
   if (request.method !== "GET" && request.method !== "PUT") {
     return errorResponse("Method Not Allowed", 405);
+  }
+
+  if (request.method === "PUT") {
+    // Authenticate the request if it's a PUT operation
+    const authResponse = authenticate(request);
+    if (authResponse) {
+      return authResponse; // Return error response if authentication fails
+    }
   }
 
   // Check if DataService is properly initialized

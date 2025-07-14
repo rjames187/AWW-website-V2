@@ -7,6 +7,7 @@ import { imageController } from "./image-controller";
 import { dataController } from "./data-controller";
 import DataService from "./DataService";
 import { JWTService } from "./auth/JWTService";
+import { authenticate } from "./auth/middleware";
 
 const router = Router();
 
@@ -19,7 +20,7 @@ router.get('/', () => {
 
 router.post('/contact', emailController);
 
-router.put('/upload-image', imageController);
+router.put('/upload-image', authenticate, imageController);
 
 router.options("*", () => {
   return new Response(null, {

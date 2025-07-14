@@ -104,7 +104,7 @@ export class JWTService {
   /**
    * Verify and decode refresh token
    */
-  verifyRefreshToken(token: string): RefreshTokenPayload {
+  verifyRefreshToken(token: string) {
     try {
       const decoded = jwt.verify(token, this.refreshSecret, {
         issuer: 'cms-backend',
@@ -115,7 +115,7 @@ export class JWTService {
         throw new Error('Invalid token type');
       }
 
-      return decoded;
+      return;
     } catch (error) {
       if (error instanceof jwt.TokenExpiredError) {
         throw new Error('Refresh token expired');
