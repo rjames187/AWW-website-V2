@@ -6,6 +6,7 @@ import ImageService from "./ImageService";
 import { imageController } from "./image-controller";
 import { dataController } from "./data-controller";
 import DataService from "./DataService";
+import { JWTService } from "./auth/JWTService";
 
 const router = Router();
 
@@ -48,6 +49,8 @@ export default {
     ImageService.startService(env.IMG_BUCKET);
 
     DataService.startService(env.KV);
+
+    JWTService.startService(env.JWT_ACCESS_SECRET, env.JWT_REFRESH_SECRET);
 
     try {
       return await router.fetch(request);

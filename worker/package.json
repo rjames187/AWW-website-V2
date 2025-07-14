@@ -20,6 +20,9 @@
     "publish": true
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cookie-parser": "^1.4.9",
+    "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^24.0.3",
     "typescript": "5.8.3",
     "wrangler": "^4.20.0"
@@ -32,6 +35,9 @@
     "seedLocalD1": "wrangler d1 migrations apply DB --local"
   },
   "dependencies": {
-    "itty-router": "^5.0.18"
+    "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.7",
+    "itty-router": "^5.0.18",
+    "jsonwebtoken": "^9.0.2"
   }
 }
