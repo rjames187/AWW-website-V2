@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ContentObject, ContentSchema } from "../components/cms/types";
 import ContentObjectEditor from "../components/cms/ContentObjectEditor";
 import ContentList from "../components/cms/ContentList";
 import { directorSchema, horseSchema, sponsorSchema } from "../data/schemas";
-import { fetchData } from "../services/dataService";
+import { fetchData, updateData } from "../services/dataService";
 
 const placeholder: Record<string, ContentObject[]> = {
   'Horses': [],
@@ -16,24 +16,40 @@ const CMSEditor: React.FC = () => {
   const [data, setData] = useState<Record<string, ContentObject[]>>(placeholder);
   const [editingObject, setEditingObject] = useState<ContentObject | null>(null);
   const [isCreating, setIsCreating] = useState(false);
+  const isInitialLoad = useRef(true);
 
   useEffect(() => {
     (async () => {
-      const horses = await fetchData('horses');
-      const directors = await fetchData('directors');
-      const sponsors = await fetchData('sponsors');
-      
-      setData({
-        'Horses': horses.data || [],
-        'Directors': directors.data || [],
-        'Sponsors': sponsors.data || []
-      });
+      const data = await fetchData('data');
+      if (data.success) {
+        setData(data.data || placeholder);
+      } else {
+        console.error('Failed to fetch initial data:', data.message);
+        alert('Failed to load data. Please try again later.');
+      }
+      isInitialLoad.current = false;
     })();
   }, []);
 
+  useEffect(() => {
+    // Skip saving on initial load
+    if (isInitialLoad.current) {
+      return;
+    }
+
+    (async () => {
+      // write new state to backend
+      const response = await updateData('data', data);
+      if (!response.success) {
+        alert('Failed to save data. Please try again.');
+        return;
+      }
+    })();
+  }, [data])
+
   const schemas = [horseSchema, directorSchema, sponsorSchema];
 
-  const handleSave = (object: ContentObject) => {
+  const handleSave = async (object: ContentObject) => {
     const schemaName = currentSchema.name;
     const existingIndex = data[schemaName].findIndex(item => item.id === object.id);
     
@@ -47,7 +63,8 @@ const CMSEditor: React.FC = () => {
         [schemaName]: [...prev[schemaName], object]
       }));
     }
-    
+
+
     setEditingObject(null);
     setIsCreating(false);
   };

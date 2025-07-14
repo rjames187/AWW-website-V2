@@ -17,7 +17,7 @@ export class DataService {
    */
   static async fetchData<T = any>(key: string): Promise<ApiResponse<T>> {
     try {
-      const url = `${this.baseUrl}/data?key=${encodeURIComponent(key)}`;
+      const url = `${DataService.baseUrl}/data?key=${encodeURIComponent(key)}`;
       
       const response = await fetch(url, {
         method: 'GET',
@@ -61,7 +61,7 @@ export class DataService {
         throw new Error('Invalid data format - must be an object');
       }
 
-      const url = `${this.baseUrl}/data?key=${encodeURIComponent(key)}`;
+      const url = `${DataService.baseUrl}/data?key=${encodeURIComponent(key)}`;
       
       const response = await fetch(url, {
         method: 'PUT',
