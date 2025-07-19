@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-interface TokenPair {
+export interface TokenPair {
   accessToken: string;
   refreshToken: string;
 }
