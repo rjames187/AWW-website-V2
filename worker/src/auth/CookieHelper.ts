@@ -50,7 +50,7 @@ export class CookieHelper {
  /**
    * Parse cookies from request header
    */
-  static parseCookies(cookieHeader: string | undefined): Record<string, string> {
+  static parseCookies(cookieHeader: string | undefined | null): Record<string, string> {
     if (!cookieHeader) return {};
 
     return cookieHeader
