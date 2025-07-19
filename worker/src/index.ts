@@ -8,6 +8,9 @@ import { dataController } from "./data-controller";
 import DataService from "./DataService";
 import { JWTService } from "./auth/JWTService";
 import { authenticate } from "./auth/middleware";
+import { LoginService } from "./auth/LoginService";
+import { loginController } from "./auth/login-controller";
+import { refreshController } from "./auth/refresh-controller";
 
 const router = Router();
 
@@ -19,6 +22,9 @@ router.get('/', () => {
 })
 
 router.post('/contact', emailController);
+
+router.post('/auth/login', loginController);
+router.post('/auth/refresh', refreshController);
 
 router.put('/upload-image', authenticate, imageController);
 
@@ -52,6 +58,8 @@ export default {
     DataService.startService(env.KV);
 
     JWTService.startService(env.JWT_ACCESS_SECRET, env.JWT_REFRESH_SECRET);
+
+    LoginService.startService(env.ADMIN_USERNAME, env.ADMIN_PASSWORD);
 
     try {
       return await router.fetch(request);
