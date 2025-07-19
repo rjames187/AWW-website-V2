@@ -47,6 +47,11 @@ export async function dataController(request: Request): Promise<Response> {
 
   } else {
     try {
+      const authResponse = authenticate(request);
+      if (authResponse) {
+        return authResponse; // Return error response if authentication fails
+      }
+
       const body = await request.json();
       if (!body || typeof body !== 'object') {
         return errorResponse("Invalid data format", 400);
