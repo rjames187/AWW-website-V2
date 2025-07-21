@@ -1,4 +1,4 @@
-import { errorResponse } from "../utils";
+import { CORS_HEADERS, errorResponse } from "../utils";
 import { CookieHelper } from "./CookieHelper";
 import { LoginService } from "./LoginService";
 
@@ -32,7 +32,8 @@ export async function loginController(request: Request): Promise<Response> {
     status: 200,
     headers: {
       'Content-Type': 'application/json',
-      'Set-Cookie': refreshCookie
+      'Set-Cookie': refreshCookie,
+      ...CORS_HEADERS
     },
   });
 }

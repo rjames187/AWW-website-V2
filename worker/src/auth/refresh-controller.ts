@@ -1,4 +1,4 @@
-import { errorResponse } from "../utils";
+import { CORS_HEADERS, errorResponse } from "../utils";
 import { CookieHelper } from "./CookieHelper";
 import { JWTService } from "./JWTService";
 
@@ -35,7 +35,8 @@ export async function refreshController(request: Request): Promise<Response> {
       status: 200,
       headers: {
         'Content-Type': 'application/json',
-        'Set-Cookie': newRefreshCookie
+        'Set-Cookie': newRefreshCookie,
+        ...CORS_HEADERS
       }
     }
   );
