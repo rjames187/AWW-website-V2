@@ -10,7 +10,7 @@ export class LoginService {
     this.adminPassword = password;
   }
 
-  public static getInstance(username: string, password: string): LoginService {
+  public static startService(username: string, password: string): LoginService {
     if (!LoginService.instance) {
       LoginService.instance = new LoginService(username, password);
     }
