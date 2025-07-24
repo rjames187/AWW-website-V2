@@ -16,7 +16,7 @@ const CMSEditor: React.FC = () => {
   const [data, setData] = useState<Record<string, ContentObject[]>>(placeholder);
   const [editingObject, setEditingObject] = useState<ContentObject | null>(null);
   const [isCreating, setIsCreating] = useState(false);
-  const isInitialLoad = useRef(true);
+  const numInitialLoads = useRef(0);
 
   useEffect(() => {
     (async () => {
@@ -27,13 +27,12 @@ const CMSEditor: React.FC = () => {
         console.error('Failed to fetch initial data:', data.message);
         alert('Failed to load data. Please try again later.');
       }
-      isInitialLoad.current = false;
     })();
   }, []);
 
   useEffect(() => {
-    // Skip saving on initial load
-    if (isInitialLoad.current) {
+    if (numInitialLoads.current < 2) {
+      numInitialLoads.current++;
       return;
     }
 

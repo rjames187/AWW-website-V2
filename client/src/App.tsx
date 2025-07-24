@@ -7,6 +7,7 @@ import AmysWishClub from './pages/AmysWishClub';
 import Horses from './pages/Horses';
 import Support from './pages/Support';
 import CMSEditor from './pages/CMSEditor';
+import LoginPage from './pages/Login';
 
 export type Page = {
   name: string;
@@ -32,6 +33,7 @@ function App() {
         <Route path="/horses" element={<Horses/>} />
         <Route path="/support" element={<Support/>} />
         <Route path="/cms" element={<CMSEditor/>} />
+        <Route path="/cms/login" element={<LoginPage />} />
       </Routes>
       <Footer pages={PAGES} />
     </>
