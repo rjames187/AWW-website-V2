@@ -4,6 +4,7 @@ import ContentObjectEditor from "../components/cms/ContentObjectEditor";
 import ContentList from "../components/cms/ContentList";
 import { directorSchema, horseSchema, sponsorSchema } from "../data/schemas";
 import { fetchData, updateData } from "../services/dataService";
+import _ from "lodash";
 
 const placeholder: Record<string, ContentObject[]> = {
   'Horses': [],
@@ -16,11 +17,14 @@ const CMSEditor: React.FC = () => {
   const [data, setData] = useState<Record<string, ContentObject[]>>(placeholder);
   const [editingObject, setEditingObject] = useState<ContentObject | null>(null);
   const [isCreating, setIsCreating] = useState(false);
-  const numInitialLoads = useRef(0);
+  const prevDataRef = useRef<Record<string, ContentObject[]>>(placeholder);
+  const responseCacheRef = useRef<Record<string, any> | null>(null);
 
   useEffect(() => {
+
     (async () => {
       const data = await fetchData('data');
+      responseCacheRef.current = _.cloneDeep(data.data);
       if (data.success) {
         setData(data.data || placeholder);
       } else {
@@ -31,8 +35,13 @@ const CMSEditor: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (numInitialLoads.current < 2) {
-      numInitialLoads.current++;
+    // ensure idempotency of data updates
+    if (_.isEqual(data, prevDataRef.current)) {
+      return;
+    }
+    prevDataRef.current = _.cloneDeep(data);
+    // ensure a remote read does not trigger a remote write
+    if (_.isEqual(data, responseCacheRef.current)) {
       return;
     }
 

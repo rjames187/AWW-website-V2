@@ -25,7 +25,7 @@ interface Styles {
 
 const workersHost = import.meta.env.VITE_WORKER_HOST || 'localhost:8787';
 
-const LoginPage: React.FC<LoginPageProps> = () => {
+const LoginPage: React.FC = () => {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
