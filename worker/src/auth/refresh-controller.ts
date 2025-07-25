@@ -22,7 +22,7 @@ export async function refreshController(request: Request): Promise<Response> {
   const newRefreshCookie = CookieHelper.createSetCookieHeader('refreshToken', tokens.refreshToken, {
     httpOnly: true,
     secure: true,
-    sameSite: 'strict',
+    sameSite: 'lax',
     maxAge: 7 * 24 * 60 * 60,
     path: '/auth/refresh'
   });
