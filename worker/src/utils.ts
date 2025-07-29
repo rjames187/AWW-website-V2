@@ -1,9 +1,15 @@
+import { get } from "http";
+import { CookieHelper } from "./auth/CookieHelper";
 import EmailService from "./EmailService";
 
-export const CORS_HEADERS = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+export const getCorsHeaders = () => {
+  const origin = CookieHelper.clientOrigin;
+  return {
+    'Access-Control-Allow-Origin': origin,
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    'Access-Control-Allow-Credentials': 'true',
+  };
 };
 
 export function jsonResponse(data: any, status: number) {
@@ -15,7 +21,7 @@ export function jsonResponse(data: any, status: number) {
     status,
     headers: {
       'Content-Type': 'application/json',
-      ...CORS_HEADERS,
+      ...getCorsHeaders(),
     },
   });
 }

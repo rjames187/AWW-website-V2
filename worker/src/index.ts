@@ -1,5 +1,5 @@
 import { Router } from "itty-router";
-import { CORS_HEADERS, errorResponse, jsonResponse } from "./utils";
+import { errorResponse, getCorsHeaders, jsonResponse } from "./utils";
 import { emailController } from "./email-controller";
 import EmailService from "./EmailService";
 import ImageService from "./ImageService";
@@ -29,9 +29,9 @@ router.post('/auth/refresh', refreshController);
 
 router.put('/upload-image', authenticate, imageController);
 
-router.options("*", () => {
+router.options('*', () => {
   return new Response(null, {
-    headers: CORS_HEADERS,
+    headers: getCorsHeaders(),
     status: 204
   });
 });
@@ -45,7 +45,10 @@ router.all("*", () => {
 
 export default {
   async fetch(request, env) {
-    CookieHelper.clientOrigin = env.CLIENT_ORIGIN ?? 'http://localhost:5173';
+    const requestOrigin = request.headers.get("Origin") || '';
+    const allowedOrigins = [env.CLIENT_ORIGIN, 'http://localhost:5173'];
+
+    CookieHelper.clientOrigin = allowedOrigins.includes(requestOrigin) ? requestOrigin : env.CLIENT_ORIGIN ?? 'http://localhost:5173';
 
     EmailService.startService(
       env.BREVO_KEY,

@@ -1,4 +1,4 @@
-import { CORS_HEADERS, errorResponse } from "../utils";
+import { errorResponse, getCorsHeaders } from "../utils";
 import { CookieHelper } from "./CookieHelper";
 import { JWTService } from "./JWTService";
 
@@ -27,11 +27,6 @@ export async function refreshController(request: Request): Promise<Response> {
     path: '/auth/refresh'
   });
 
-  const newCorsHeaders = Object.assign(
-    CORS_HEADERS,
-    { 'Access-Control-Allow-Origin': CookieHelper.clientOrigin }
-  );
-
   return new Response(
     JSON.stringify({
       accessToken: tokens.accessToken
@@ -41,7 +36,7 @@ export async function refreshController(request: Request): Promise<Response> {
       headers: {
         'Content-Type': 'application/json',
         'Set-Cookie': newRefreshCookie,
-        ...newCorsHeaders
+        ...getCorsHeaders()
       }
     }
   );
