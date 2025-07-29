@@ -13,7 +13,7 @@ export interface UploadResult {
  * @param key - Unique identifier for the image (e.g., filename or ID)
  * @returns Promise with upload result
  */
-export async function uploadImageFile(file: File, key: string): Promise<UploadResult> {
+export async function uploadImageFile(file: File, key: string, token: string): Promise<UploadResult> {
   try {
     // Validate file type
     if (!file.type.startsWith('image/')) {
@@ -32,6 +32,7 @@ export async function uploadImageFile(file: File, key: string): Promise<UploadRe
       headers: {
         'Content-Type': file.type,
         'Content-Length': file.size.toString(),
+        'Authorization': `Bearer ${token}`
       },
       body: arrayBuffer
     });
@@ -119,15 +120,4 @@ export async function uploadImageFromDataUrl(
       message: error instanceof Error ? error.message : 'Upload failed'
     };
   }
-}
-
-// Legacy function for backward compatibility
-export function uploadFile(file: File): Promise<string> {
-  const key = `${Date.now()}-${file.name}`;
-  return uploadImageFile(file, key).then(result => {
-    if (result.success && result.url) {
-      return result.url;
-    }
-    throw new Error(result.message);
-  });
 }

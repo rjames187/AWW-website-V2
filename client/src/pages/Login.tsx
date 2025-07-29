@@ -1,5 +1,6 @@
-import React, { useState, useEffect, CSSProperties, MouseEvent } from 'react';
+import React, { useState, useEffect, CSSProperties, MouseEvent, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext, AuthContextData } from '../context/AuthContext';
 
 interface LoginCredentials {
   username: string;
@@ -31,6 +32,7 @@ const LoginPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
   const navigate = useNavigate();
+  const { setAuthData } = useContext(AuthContext);
 
   const handleSubmit = async (e: MouseEvent<HTMLButtonElement>): Promise<void> => {
     e.preventDefault();
@@ -55,9 +57,10 @@ const LoginPage: React.FC = () => {
         throw new Error(errorData.message || 'Login failed');
       }
 
-      const data = await response.json();
+      const data: AuthContextData = await response.json();
       console.log('Login successful:', data);
-      
+
+      setAuthData(data);
       navigate('/cms');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An unexpected error occurred');

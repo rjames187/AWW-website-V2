@@ -1,10 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { ContentObject, ContentSchema } from "../components/cms/types";
 import ContentObjectEditor from "../components/cms/ContentObjectEditor";
 import ContentList from "../components/cms/ContentList";
 import { directorSchema, horseSchema, sponsorSchema } from "../data/schemas";
 import { fetchData, updateData } from "../services/dataService";
 import _ from "lodash";
+import { AuthContext } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
+import { orchestrateAuthenticatedCall } from "../services/authService";
 
 const placeholder: Record<string, ContentObject[]> = {
   'Horses': [],
@@ -19,6 +22,8 @@ const CMSEditor: React.FC = () => {
   const [isCreating, setIsCreating] = useState(false);
   const prevDataRef = useRef<Record<string, ContentObject[]>>(placeholder);
   const responseCacheRef = useRef<Record<string, any> | null>(null);
+  const authContext = useContext(AuthContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
 
@@ -47,10 +52,18 @@ const CMSEditor: React.FC = () => {
 
     (async () => {
       // write new state to backend
-      const response = await updateData('data', data);
-      if (!response.success) {
-        alert('Failed to save data. Please try again.');
+      const response = await orchestrateAuthenticatedCall(
+        authContext,
+        navigate,
+        updateData,
+        ['data', data]
+      );
+      if ((!response.success) && response.reason === 'session_expired') {
         return;
+      }
+      if (!response.success) {
+        alert('Failed to save data. Please try again later.');
+        console.error('Failed to save data:', response?.message);
       }
     })();
   }, [data])

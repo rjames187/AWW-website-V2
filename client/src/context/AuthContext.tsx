@@ -5,18 +5,21 @@ export interface AuthContextData {
 }
 
 export interface AuthContextValue {
-  data: AuthContextData | null;
-  setData: (data: AuthContextData | null) => void;
+  authData: AuthContextData | null;
+  setAuthData: (data: AuthContextData | null) => void;
 }
 
-export const AuthContext = createContext<AuthContextValue | null>(null);
+export const AuthContext = createContext<AuthContextValue>({
+  authData: null,
+  setAuthData: () => {}
+});
 
 function AuthContextProvider({ children }: { children: React.ReactNode }) {
   const [data, setData] = useState<AuthContextData | null>(null);
 
   const contextValue = {
-    data,
-    setData,
+    authData: data,
+    setAuthData: setData,
   }
 
   return (

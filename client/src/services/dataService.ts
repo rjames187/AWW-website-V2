@@ -55,7 +55,7 @@ export class DataService {
    * @param data - The data to send to the backend
    * @returns Promise with the update result
    */
-  static async updateData<T = any>(key: string, data: T): Promise<ApiResponse> {
+  static async updateData<T = any>(key: string, data: T, token: string): Promise<ApiResponse> {
     try {
       if (!data || typeof data !== 'object') {
         throw new Error('Invalid data format - must be an object');
@@ -68,6 +68,7 @@ export class DataService {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify(data)
       });
