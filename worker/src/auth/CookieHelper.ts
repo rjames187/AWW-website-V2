@@ -9,6 +9,8 @@ export interface CookieOptions {
 }
 
 export class CookieHelper {
+  static clientOrigin: string = "http://localhost:5173";
+
   /**
    * Create a Set-Cookie header value
    */

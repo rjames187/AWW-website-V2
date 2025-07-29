@@ -11,6 +11,7 @@ import { authenticate } from "./auth/middleware";
 import { LoginService } from "./auth/LoginService";
 import { loginController } from "./auth/login-controller";
 import { refreshController } from "./auth/refresh-controller";
+import { CookieHelper } from "./auth/CookieHelper";
 
 const router = Router();
 
@@ -44,6 +45,8 @@ router.all("*", () => {
 
 export default {
   async fetch(request, env) {
+    CookieHelper.clientOrigin = env.CLIENT_ORIGIN ?? 'http://localhost:5173';
+
     EmailService.startService(
       env.BREVO_KEY,
       env.FROM_EMAIL,
