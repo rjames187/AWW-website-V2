@@ -71,6 +71,16 @@ export default {
       return await router.fetch(request);
     } catch (error: any) {
       console.error("Internal Server Error:", error);
+
+      if (error instanceof Error) {
+        EmailService.instance?.sendErrorAlertEmail(
+          500,
+          new Date(),
+          error,
+          request
+        ).catch(err => console.error("Failed to send error alert email:", err));
+      }
+
       return errorResponse(`Internal Server Error: ${error?.message}`, 500);
     }
   },

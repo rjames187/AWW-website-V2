@@ -1,4 +1,4 @@
-import { contactSubmissionTemplate } from "./templates";
+import { contactSubmissionTemplate, errorReportTemplate } from "./templates";
 
 export default class EmailService {
   public static instance: EmailService;
@@ -50,6 +50,32 @@ export default class EmailService {
     return { success: true, message: "Contact email(s) sent successfully." };
   }
 
+  public async sendErrorAlertEmail(
+    status: number,
+    timeStamp: Date,
+    error: Error,
+    request: Request,
+  ) {
+    if (!EmailService.instance) {
+      throw new Error("EmailService is not initialized. Call EmailService.startService() first.");
+    }
+
+    const body = this.getErrorAlertBody(
+      status,
+      timeStamp.toISOString(),
+      error.message,
+      request.url,
+      request.headers.get("User-Agent") || "",
+      error.stack
+    );
+    const response = await this.sendEmail(body);
+    if (!response.ok) {
+      throw new Error(`Failed to send error alert email: ${response.status} ${response.statusText}`);
+    }
+
+    return { success: true, message: "Error alert email sent successfully." };
+  }
+
   public async sendEmail(body: any) {
     const options = {
       method: 'POST',
@@ -73,6 +99,37 @@ export default class EmailService {
       ],
       subject: "New Contact Form Submission",
       htmlContent: contactSubmissionTemplate(fillerEmail, fillerName, message),
+    };
+    return JSON.stringify(body);
+  }
+
+  private getErrorAlertBody(
+    status: number,
+    timeStamp: string,
+    message: string,
+    url: string,
+    agent: string,
+    stack?: string
+  ): string {
+    const body = {
+      sender: {
+        name: this.fromName,
+        email: this.fromAddress,
+      },
+      to: [
+        {
+          email: this.adminAddress,
+        },
+      ],
+      subject: `Error Alert - ${status} at ${timeStamp}`,
+      htmlContent: errorReportTemplate(
+        status,
+        timeStamp,
+        message,
+        url,
+        agent,
+        stack
+      )
     };
     return JSON.stringify(body);
   }
