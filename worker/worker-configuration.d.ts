@@ -14,7 +14,7 @@ declare namespace Cloudflare {
 		JWT_REFRESH_SECRET: string;
 		ADMIN_USERNAME: string;
 		ADMIN_PASSWORD: string;
-		CLIENT_ORIGIN: string | undefined;
+		CLIENT_ORIGINS: string | undefined;
 		IMG_BUCKET: R2Bucket;
 	}
 }
