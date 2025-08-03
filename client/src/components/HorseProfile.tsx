@@ -8,7 +8,7 @@ function HorseProfile({ data }: HorseProfileProps) {
   return (
     <div>
       <figure>
-        <img src={`./horses/${data.file}`} alt={data.name} />
+        <img src={data.file} alt={data.name} />
         <figcaption>
           <h2>{data.name}</h2>
           { data.bf && data.bf.map((year) => <p>{`👑${year} Therapy Horse of the Year👑`}</p>)}

@@ -25,6 +25,8 @@ function DataContextProvider({ children }: { children: React.ReactNode }) {
       return;
     }
 
+    console.log('Fetching data from server...');
+
     (async () => {
       const response = await fetchData('data');
       if (!response.success) {
