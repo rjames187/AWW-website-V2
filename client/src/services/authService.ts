@@ -7,6 +7,9 @@ interface CallBackFunction {
   (...args: any[]): Promise<any>;
 }
 
+/*
+ * Orchestrates an authenticated API call by refreshing the access token if needed.
+ */
 export async function orchestrateAuthenticatedCall(
   context: AuthContextValue,
   navigate: NavigateFunction,

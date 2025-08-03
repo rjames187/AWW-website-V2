@@ -1,7 +1,8 @@
 import { Plus } from "lucide-react";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FieldDefinition } from "./types";
 import { uploadImageFile } from "../../services/uploadService";
+import { AuthContext } from "../../context/AuthContext";
 
 const FieldInput: React.FC<{
   field: FieldDefinition;
@@ -11,6 +12,7 @@ const FieldInput: React.FC<{
   const [dragOver, setDragOver] = useState(false);
   const [uploading, setUploading] = useState(false);
   const fileInputRef = React.useRef<HTMLInputElement>(null);
+  const authContext = useContext(AuthContext);
 
   const baseInputStyle = {
     width: '100%',
@@ -50,8 +52,11 @@ const FieldInput: React.FC<{
           // Generate a unique key for the file
           const key = `${Date.now()}-${file.name}`;
           
+          const { authData } = authContext;
+          const { accessToken } = authData || {};
+
           // Upload using the File object (more efficient)
-          const uploadResult = await uploadImageFile(file, key);
+          const uploadResult = await uploadImageFile(file, key, accessToken);
           
           if (uploadResult.success) {
             // Update the value with the server URL
