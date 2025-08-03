@@ -8,6 +8,7 @@ import _ from "lodash";
 import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { orchestrateAuthenticatedCall } from "../services/authService";
+import { DataContext } from "../context/DataContext";
 
 const placeholder: Record<string, ContentObject[]> = {
   'Horses': [],
@@ -24,6 +25,7 @@ const CMSEditor: React.FC = () => {
   const responseCacheRef = useRef<Record<string, any> | null>(null);
   const authContext = useContext(AuthContext);
   const navigate = useNavigate();
+  const { setNeedRefresh } = useContext(DataContext);
 
   useEffect(() => {
 
@@ -88,6 +90,7 @@ const CMSEditor: React.FC = () => {
 
     setEditingObject(null);
     setIsCreating(false);
+    setNeedRefresh(true); // trigger a refresh in DataContext
   };
 
   const handleDelete = (id: string) => {

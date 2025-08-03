@@ -48,7 +48,8 @@ export async function uploadImageFile(file: File, key: string, token?: string): 
 
     const result = await response.json();
 
-    const CDN_BASE_URL = import.meta.env.CDN_HOST;
+    const CDN_BASE_URL = import.meta.env.VITE_CDN_HOST;
+  
     if (!CDN_BASE_URL) {
       throw new Error('CDN host is not configured');
     }

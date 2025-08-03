@@ -4,6 +4,8 @@ import { FieldDefinition } from "./types";
 import { uploadImageFile } from "../../services/uploadService";
 import { AuthContext } from "../../context/AuthContext";
 
+const CDN_HOST = import.meta.env.VITE_CDN_HOST;
+
 const FieldInput: React.FC<{
   field: FieldDefinition;
   value: any;
@@ -63,7 +65,8 @@ const FieldInput: React.FC<{
             onChange({
               ...fileData,
               uploadedUrl: uploadResult.url,
-              uploadKey: key
+              uploadKey: key,
+              dataUrl: undefined
             });
             console.log('File uploaded successfully:', uploadResult.url);
           } else {
@@ -138,10 +141,10 @@ const FieldInput: React.FC<{
             justifyContent: 'center'
           }}
         >
-          {value && value.dataUrl ? (
+          {value && (value.dataUrl || value.uploadKey) ? (
             <div style={{ width: '100%' }}>
               <img
-                src={value.dataUrl}
+                src={value.dataUrl ?? `${CDN_HOST}/${value.uploadKey}`}
                 alt="Preview"
                 style={{
                   maxWidth: '100%',
