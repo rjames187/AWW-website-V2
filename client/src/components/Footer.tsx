@@ -102,7 +102,7 @@ function Footer({ pages }: FooterProps) {
       <div>
         <p>
             Download icon and wings favicon by
-          <a href="https://icons8.com/">Icons8</a>
+          <a href="https://icons8.com/"> Icons8</a>
         </p>
         <p>
           <a href="https://github.com/rjames187/AWW-website-V2">View Source</a>
