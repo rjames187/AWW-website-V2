@@ -1,3 +1,5 @@
 name = "amyswishwithwingsweb"
 compatibility_date = "2025-05-05"
 assets = { directory = "dist" }
+[observability.logs]
+enabled = true
