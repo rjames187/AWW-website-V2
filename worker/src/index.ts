@@ -46,7 +46,7 @@ router.all("*", () => {
 export default {
   async fetch(request, env) {
     const requestOrigin = request.headers.get("Origin") || '';
-    const allowedOrigins = [...(env.CLIENT_ORIGINS?.split(",") || []), 'http://localhost:5173'];
+    const allowedOrigins = [...(env.CLIENT_ORIGINS?.split(",") || []), 'http://localhost:5173', 'http://localhost:8787'];
 
     CookieHelper.clientOrigin = allowedOrigins.includes(requestOrigin) ? requestOrigin : allowedOrigins[0];
 
