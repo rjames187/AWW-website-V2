@@ -1,9 +1,15 @@
-import { DataService } from '../DataService';
+import { useContext } from 'react';
 import './home.css';
+import { DataContext } from '../context/DataContext';
+import { ContentObject } from '../components/cms/types';
 
-const sponsors = DataService.getSponsors();
+const CDN_HOST = import.meta.env.VITE_CDN_HOST;
 
 function Home() {
+  const { data } = useContext(DataContext);
+
+  const dataToRender = data?.Sponsors ?? [];
+
   return (
     <main>
       <section id="hero">
@@ -43,7 +49,7 @@ function Home() {
           /></a>
         <a href="support.html#sponsor">Become a Sponsor</a>
         {
-          sponsors.map((category) => {
+          dataToRender.map((category) => {
             return  (
               <>
                 <h3 key={category.category}>
@@ -51,11 +57,11 @@ function Home() {
                 </h3>
                 <div className='cat-div'>
                   {
-                    category.items.map((sponsor) => {
+                    category.items.map((sponsor: ContentObject) => {
                       if (sponsor.file) {
                         return (
                           <a key={sponsor.name} href={sponsor.href}>
-                            <img src={`./sponsors/${sponsor.file}`} alt={sponsor.name} />
+                            <img src={`${CDN_HOST}/${sponsor.file.uploadKey}`} alt={sponsor.name} />
                           </a>
                         );
                       }
