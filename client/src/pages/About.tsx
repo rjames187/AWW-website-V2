@@ -1,10 +1,28 @@
+import { useContext } from 'react';
 import DirectorProfile from '../components/DirectorProfile';
-import { DataService } from '../DataService';
 import './about.css';
+import { DataContext } from '../context/DataContext';
+import { ContentObject } from '../components/cms/types';
+import { Director } from '../data/directors';
 
-const directors = DataService.getDirectors();
+const CDN_HOST = import.meta.env.VITE_CDN_HOST;
+
+const mapToDirector = (object: ContentObject): Director => {
+  return {
+    name: object.name,
+    description: object.description,
+    title: object.title,
+    email: object.email,
+    phone: object.phone,
+    file: `${CDN_HOST}/${object.file.uploadKey}`,
+  };
+}
 
 function About() {
+  const { data } = useContext(DataContext);
+
+  const dataToRender = data?.Directors ?? [];
+
   return (
     <main>
       <section id="about">
@@ -49,7 +67,7 @@ function About() {
       </section>
       <section id="directors">
         <div>
-          { directors.map((director) => <DirectorProfile data={director} />) }
+          { dataToRender.map((director) => <DirectorProfile data={mapToDirector(director)} />) }
         </div>
       </section>
     </main>

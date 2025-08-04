@@ -9,7 +9,7 @@ function DirectorProfile({ data }: DirectorProfileProps) {
   return (
     <div>
       <figure>
-        <img src={`./directors/${data.file}`} alt={data.name} />
+        <img src={data.file} alt={data.name} />
         <figcaption>
           <h2>{data.name}</h2>
           { data.title && <p>{data.title}</p>}

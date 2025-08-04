@@ -19,7 +19,7 @@ const mapToHorse = (object: ContentObject): Horse => {
 function Horses() {
   const { data } = useContext(DataContext);
 
-  const dataToRender = data?.Horses || [];
+  const dataToRender = data?.Horses ?? [];
 
   return (
     <main>
