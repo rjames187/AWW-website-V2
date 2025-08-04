@@ -41,12 +41,6 @@ function Home() {
       <section id="sponsors">
         <h2>Sponsors</h2>
         <br />
-        <h3>Platinum Buckle</h3>
-        <a id="jls" href="https://jameslandscaping.com/"
-        ><img
-            src="./sponsors/jlsgcs.png"
-            alt="Grand Champion Sponsor, James Landscaping Inc., donated $10,000 dollars"
-          /></a>
         <a href="support.html#sponsor">Become a Sponsor</a>
         {
           dataToRender.map((category) => {
