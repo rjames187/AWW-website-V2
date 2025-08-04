@@ -107,7 +107,7 @@ function Footer({ pages }: FooterProps) {
         <p>
           <a href="https://github.com/rjames187/AWW-website-V2">View Source</a>
         </p>
-        <p>© 2024 Amy's Wish with Wings All Rights Reserved</p>
+        <p>© 2025 Amy's Wish with Wings All Rights Reserved</p>
       </div>
     </footer>
   )
