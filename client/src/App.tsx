@@ -8,6 +8,7 @@ import Horses from './pages/Horses';
 import Support from './pages/Support';
 import CMSEditor from './pages/CMSEditor';
 import LoginPage from './pages/Login';
+import ScrollToAnchor from './components/ScrollToAnchor';
 
 export type Page = {
   name: string;
@@ -25,6 +26,7 @@ function App() {
 
   return (
     <>
+      <ScrollToAnchor />
       <Nav pages={PAGES} />
       <Routes>
         <Route path="/" element={<Home/>} />

@@ -19,8 +19,8 @@ function Home() {
             for Children with Diverse Needs
         </h1>
         <div>
-          <Link to="/support">Volunteer</Link>
-          <Link to="/support">Donate</Link>
+          <Link to="/support#volunteer">Volunteer</Link>
+          <Link to="/support#donate">Donate</Link>
         </div>
       </section>
       <section id="home-about">
@@ -42,7 +42,7 @@ function Home() {
       <section id="sponsors">
         <h2>Sponsors</h2>
         <br />
-        <Link to="/support">Become a Sponsor</Link>
+        <Link to="/support#sponsor">Become a Sponsor</Link>
         {
           dataToRender.map((category) => {
             return  (
