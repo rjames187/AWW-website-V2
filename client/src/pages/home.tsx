@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import './home.css';
 import { DataContext } from '../context/DataContext';
 import { ContentObject } from '../components/cms/types';
+import { Link } from 'react-router';
 
 const CDN_HOST = import.meta.env.VITE_CDN_HOST;
 
@@ -18,8 +19,8 @@ function Home() {
             for Children with Diverse Needs
         </h1>
         <div>
-          <a href="./support.html#volunteer">Volunteer</a>
-          <a href="./support.html">Donate</a>
+          <Link to="/support">Volunteer</Link>
+          <Link to="/support">Donate</Link>
         </div>
       </section>
       <section id="home-about">
@@ -36,12 +37,12 @@ function Home() {
                 With Pride Horsemanship School in Southlake, Texas.
           </li>
         </ul>
-        <a href="./about.html">About Us</a>
+        <Link to="/about">About Us</Link>
       </section>
       <section id="sponsors">
         <h2>Sponsors</h2>
         <br />
-        <a href="support.html#sponsor">Become a Sponsor</a>
+        <Link to="/support">Become a Sponsor</Link>
         {
           dataToRender.map((category) => {
             return  (
