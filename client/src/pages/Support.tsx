@@ -38,7 +38,7 @@ function Support() {
             src="./download.png"
             alt="download"
           /></a>
-        <a href="./files/volunteer.pdf"
+        <a href="./files/volunteer.pdf" target="_blank"
         >Volunteer Release/Waiver Form<img
             src="./download.png"
             alt="download"

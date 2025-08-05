@@ -45,22 +45,22 @@ function AmysWishClub() {
           </p>
 
           <div>
-            <a href="./files/rider_registration.pdf"
+            <a href="./files/rider_registration.pdf" target="_blank"
             >Rider Registration<img
                 src="./download.png"
                 alt="download"
               /></a>
-            <a href="./files/lesson_registration.pdf"
+            <a href="./files/lesson_registration.pdf" target="_blank"
             >Lesson Registration<img
                 src="./download.png"
                 alt="download"
               /></a>
-            <a href="./files/waiver.pdf"
+            <a href="./files/waiver.pdf" target="_blank"
             >Student Release/Waiver Form<img
                 src="./download.png"
                 alt="download"
               /></a>
-            <a href="./files/med_form.pdf"
+            <a href="./files/med_form.pdf" target="_blank"
             >Student Medical Release<img
                 src="./download.png"
                 alt="download"
