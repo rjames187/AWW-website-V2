@@ -8,8 +8,9 @@ function Support() {
         <div>
           <a
             href="https://www.paypal.com/donate/?hosted_button_id=QH8EZ5BGXS2XS"
+            target="_blank"
           >PayPal</a>
-          <a href="https://account.venmo.com/u/doreen-bruton">Venmo</a>
+          <a href="https://account.venmo.com/u/doreen-bruton" target="_blank">Venmo</a>
         </div>
       </section>
       <section id="sponsor">
@@ -26,7 +27,7 @@ function Support() {
           </p>
           <h2>How to Sponsor</h2>
           <p>To sponsor our event, check out the Bobby Fest website.</p>
-          <a href="https://bobbyfest.com/">bobbyfest.com</a>
+          <a href="https://bobbyfest.com/" target="_blank">bobbyfest.com</a>
         </div>
       </section>
 
