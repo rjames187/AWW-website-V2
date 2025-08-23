@@ -4,8 +4,9 @@ function AmysWishClub() {
   return (
     <main>
       <div className="warning-banner">
-        🛑🚧New riders will be placed on a wait-list at this time. Call or text
-        to be added to the list.🚧🛑
+        Text Doreen Bruton 
+        (<a href="tel:817-999-8332">817-999-8332</a>) 
+        for a barn tour to discuss your child's needs and available class times
       </div>
       <section id="awc">
         <div>

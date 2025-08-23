@@ -8,6 +8,11 @@
     padding-bottom: 20px;
 }
 
+.warning-banner a {
+    color: white;
+    text-decoration: underline;
+}
+
 #awc {
     background: rgb(101,101,101);
     background: radial-gradient(circle, rgba(101,101,101,1) 0%, rgba(48,48,48,1) 100%);
