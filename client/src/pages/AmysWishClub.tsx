@@ -51,7 +51,7 @@ function AmysWishClub() {
                 src="./download.png"
                 alt="download"
               /></a>
-            <a href="./files/lesson_registration.pdf" target="_blank"
+            <a href="./files/LessonRegistration.docx" download
             >Lesson Registration<img
                 src="./download.png"
                 alt="download"
