@@ -61,7 +61,7 @@ function AmysWishClub() {
                 src="./download.png"
                 alt="download"
               /></a>
-            <a href="./files/med_form.pdf" target="_blank"
+            <a href="./files/med_form.docx" target="_blank"
             >Student Medical Release<img
                 src="./download.png"
                 alt="download"
