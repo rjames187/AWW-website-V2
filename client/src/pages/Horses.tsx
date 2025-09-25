@@ -26,7 +26,7 @@ function Horses() {
       <section id="horses">
         <div>
           <h1>Meet our Horses!</h1>
-          <a href="https://form.jotform.com/203338511533044" target="_blank">🗳️Vote for Therapy Horse of the Year!🗳️</a>
+          { /* therapy horse link goes here */ }
           { dataToRender.map((horse) => <HorseProfile key={horse.name} data={mapToHorse(horse)} />) }
         </div>
       </section>

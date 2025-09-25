@@ -41,7 +41,7 @@ function AmysWishClub() {
             Call or text 817-999-8332 and schedule an appointment to visit our
             facility to see if we are the right fit for you and your child.
             Download the forms below, then email or bring in person.
-            Participants must meet the weight guidelines of under 150 lbs. for
+            Participants must meet the weight guidelines of under 170 lbs. for
             our horses.
           </p>
 
