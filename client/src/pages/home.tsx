@@ -3,6 +3,7 @@ import './home.css';
 import { DataContext } from '../context/DataContext';
 import { ContentObject } from '../components/cms/types';
 import { Link } from 'react-router';
+import VoteLink from '../components/VoteLink';
 
 const CDN_HOST = import.meta.env.VITE_CDN_HOST;
 
@@ -22,6 +23,7 @@ function Home() {
           <Link to="/support#volunteer">Volunteer</Link>
           <Link to="/support#donate">Donate</Link>
         </div>
+        <VoteLink href="https://form.jotform.com/203338511533044" text="Vote for therapy horse of the year" />
       </section>
       <section id="home-about">
         <h2>About Us</h2>
