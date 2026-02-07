@@ -10,7 +10,6 @@ function Support() {
             href="https://www.paypal.com/donate/?hosted_button_id=QH8EZ5BGXS2XS"
             target="_blank"
           >PayPal</a>
-          <a href="https://account.venmo.com/u/doreen-bruton" target="_blank">Venmo</a>
         </div>
       </section>
       <section id="sponsor">
