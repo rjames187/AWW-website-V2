@@ -22,6 +22,7 @@ function Home() {
           <Link to="/support#volunteer">Volunteer</Link>
           <Link to="/support#donate">Donate</Link>
         </div>
+        <Link to="/support#book">Purchase our book</Link>
       </section>
       <section id="home-about">
         <h2>About Us</h2>
