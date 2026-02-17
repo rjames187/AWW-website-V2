@@ -49,6 +49,11 @@ function Support() {
             alt="download"
           /></a>
       </section>
+
+      <section id="book">
+        <h1>Purchase our book</h1>
+        <img src="./public/adreamtoride.jpg" alt="A Dream to Ride book cover and QR code" />
+      </section>
     </main>
   )
 }
