@@ -15,7 +15,14 @@ function Support() {
       <section id="sponsor">
         <div>
           <h1>Bobby Fest</h1>
-          <img src="./bobbyfest.jpg" alt="" />
+          <div className="bobbyfest-video">
+            <iframe
+              src="https://www.youtube.com/embed/m5TR4m_bqT8"
+              title="Bobby Fest slideshow"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
           <p>
             Bobbyfest started out 9 years ago as a backyard music festival
             hosted by Bobby & Lisa Rawls. In its third year, Bobby decided to
