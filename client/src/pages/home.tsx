@@ -40,6 +40,45 @@ function Home() {
         </ul>
         <Link to="/about">About Us</Link>
       </section>
+      <section id="letter">
+        <h2>From Our Families</h2>
+        <p className="letter-intro">A letter to our founder, Doreen</p>
+        <div className="letter-card">
+          <p className="letter-salutation">Dear Doreen,</p>
+          <p>
+            I am writing to share with you how much your therapeutic horsemanship
+            program has impacted my daughter, Megan. She started when she was 6 or
+            7 and returned last year. The transformation we have seen over the
+            years is truly incredible.
+          </p>
+          <p>
+            Megan is non-verbal, but she communicates her immense love for your
+            program in ways that speak louder than words. When she sees her riding
+            helmet and boots, she laughs out loud with joy. The moment she is on
+            the horse, she cannot stop smiling. That smile tells me that she feels
+            freedom, joy, and a sense of accomplishment that she rarely
+            experiences elsewhere.
+          </p>
+          <p>
+            Thanks to the dedication of your staff and volunteers, I have seen
+            such a massive improvement in her physical and emotional well-being.
+            She has gained core strength and her physical balance has improved
+            dramatically. Perhaps even more importantly, her confidence has
+            soared. Being part of such a large, calm animal gives her a sense of
+            autonomy and power that she simply cannot get in her daily life. She
+            seems to feel it in her soul.
+          </p>
+          <p>
+            Thank you for providing such a safe, welcoming, and life-changing
+            environment. You have given her a place where she feels understood and
+            capable. We are forever grateful to your organization and your
+            volunteers for the passion you bring to therapeutic riding.
+          </p>
+          <p className="letter-signoff">With warmest thanks,</p>
+          <p className="letter-name">Diane McGee</p>
+          <p className="letter-role">Megan&apos;s mom</p>
+        </div>
+      </section>
       <section id="sponsors">
         <h2>Sponsors</h2>
         <br />
