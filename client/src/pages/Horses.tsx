@@ -4,6 +4,7 @@ import './horses.css';
 import { DataContext } from '../context/DataContext';
 import { ContentObject } from '../components/cms/types';
 import { Horse } from '../data/horses';
+import VoteLink from '../components/VoteLink';
 
 const CDN_HOST = import.meta.env.VITE_CDN_HOST;
 
@@ -26,7 +27,8 @@ function Horses() {
       <section id="horses">
         <div>
           <h1>Meet our Horses!</h1>
-          { /* therapy horse link goes here */ }
+          { /* therapy horse vote link goes here */ }
+          <VoteLink href="https://form.jotform.com/203338511533044" text="Vote for therapy horse of the year!" />
           { dataToRender.map((horse) => <HorseProfile key={horse.name} data={mapToHorse(horse)} />) }
         </div>
       </section>
